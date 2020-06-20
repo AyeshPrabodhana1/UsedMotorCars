@@ -25,7 +25,7 @@
                         </ul>
                     </li>
                     <li><a href='process.php'>How to Buy</a></li>
-                    <li><a href='stock.php'>Stock in Hand</a></li>
+                    <!-- <li><a href='stock.php'>Stock in Hand</a></li> -->
                     <li><a href='faq.php'>FAQ</a></li>
                     <li><a href='about_us.php'>About Us</a></li>
                     <li><a href='contact_us.php'>Contact Us</a></li>

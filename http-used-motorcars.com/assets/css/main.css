@@ -340,7 +340,8 @@ section {
 }
 
 .page-heading {
-    background-image: url(../images/header/header.jpg);
+    /* background-image: url(../images/header/header.jpg); */
+    background-image: url('https://images.pexels.com/photos/315938/pexels-photo-315938.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940');
     background-position: center center;
     background-size: cover;
     background-repeat: no-repeat;
@@ -796,12 +797,11 @@ only screen and (min-resolution:192dpi) and (max-width:1024px) {
         width: 100%;
         display: none
     }
-    .site-header .logo {
+    /* .site-header .logo {
         float: left;
         padding: 15px 0px 44px 0px;
         display: inline-block;
-        background-image: url(../images/logo_responsive_black.png)
-    }
+    } */
     .site-header #cssmenu.align-center>ul {
         text-align: left
     }
@@ -952,7 +952,6 @@ only screen and (min-resolution:192dpi) and (max-width:1024px) {
         min-width: 100%;
         position: relative;
         display: inline-block;
-        max-width: none
     }
 
     *,
@@ -3792,4 +3791,8 @@ ul li, ol li {
     left: 16px;
     bottom: 0px;
     top: 32px;
+}
+
+.title {
+    font-size: 18px;
 }
