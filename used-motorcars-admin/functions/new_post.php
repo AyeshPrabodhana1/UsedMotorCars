@@ -63,13 +63,13 @@ VALUES ('$ref_no', '$title', '$description', '$amount', '$chassis', '$distance',
         }
       }
 
-      header('Location:../posts.php?posted');
-
       if (in_array($ext, $extension)) {
         if (!file_exists("C:/xampp/htdocs/github/used-motorcars-admin/uploads/post/" . $txtGalleryName . "/" . $file_name)) {
           move_uploaded_file($file_tmp = $_FILES["files"]["tmp_name"][$key], "C:/xampp/htdocs/github/used-motorcars-admin/uploads/post/" . $txtGalleryName . "/" . $file_name);
         }
       }
+
+      header('Location:../posts.php?posted');
     }
   } else {
     echo "query failure";
