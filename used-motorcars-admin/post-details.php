@@ -75,7 +75,7 @@ if (isset($_GET['id'])) {
                                         <hr>
                                         <a class="pull-left" href="#"></a>
                                         <div class="media-body"> <span class="media-meta pull-right">' . $row["date"] . '</span>
-                                            <h4 class="text-danger m-0">' . '$ ' . $row["amount"] . '</h4></div>
+                                            <h4 class="text-danger m-0">' . $row["amount"] . '</h4></div>
                                             <div class="row" style="margin-top: 15px;">
                                                 <div class="col-md-4">
                                                     Reference Number

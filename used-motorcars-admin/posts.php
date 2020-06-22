@@ -95,7 +95,7 @@ $query = mysqli_query($connection, $sql);
                                                 echo
                                                     '<tr>
                                                     <td class="hidden-xs"><a href="post-details.php?id=' . $row["id"] . '" />' . $row["title"] . '</td>
-                                                    <td class="max-texts"> <a href="post-details.php?id=' . $row["id"] . '" />' . '$ '. $row["amount"] . '</td>
+                                                    <td class="max-texts"> <a href="post-details.php?id=' . $row["id"] . '" />'. $row["amount"] . '</td>
                                                     </td>
                                                     <td class="text-right">' . $row["date"] . '</td>
                                                 </tr>

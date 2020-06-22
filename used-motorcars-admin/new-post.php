@@ -212,7 +212,7 @@ $features_query = mysqli_query($connection, $sql_features);
                                             <div class="col-xs-5">
                                                 <?php 
                                                     while ($row_feature = mysqli_fetch_array($features_query)) {
-                                                        echo "<input type='checkbox' name='check_list[]' value='". $row_feature['code'] ."'> <span> ". $row_feature['name'] ." </span> <br/>";
+                                                        echo "<input type='checkbox' name='check_list[]' value='". $row_feature['id'] ."'> <span> ". $row_feature['name'] ." </span> <br/><br/>";
                                                     }
                                                 ?>
                                             </div>

@@ -57,19 +57,19 @@ VALUES ('$ref_no', '$title', '$description', '$amount', '$chassis', '$distance',
       mysqli_query($conn, $query);
 
       if (!empty($_POST['check_list'])) {
-        foreach($_POST['check_list'] as $check) {
-          $query_features = "INSERT INTO postfeatures (post_id,feature_id) VALUES ('$last_id', '$check')";
+        foreach($_POST['check_list'] as $checkbox) {
+          $query_features = "INSERT INTO postfeatures (post_id,feature_id) VALUES ('$last_id', '$checkbox')";
           mysqli_query($conn, $query_features);
         }
       }
 
+      header('Location:../posts.php?posted');
+
       if (in_array($ext, $extension)) {
-        if (!file_exists("C:/xampp/htdocs/github/used-motorcars-admin/uploads/post/" . $txtGalleryName . "/" . $file_name)) {
-          move_uploaded_file($file_tmp = $_FILES["files"]["tmp_name"][$key], "C:/xampp/htdocs/github/used-motorcars-admin/uploads/post/" . $txtGalleryName . "/" . $file_name);
+        if (!file_exists("C:/xampp/htdocs/UsedMotorCars/used-motorcars-admin/uploads/post/" . $txtGalleryName . "/" . $file_name)) {
+          move_uploaded_file($file_tmp = $_FILES["files"]["tmp_name"][$key], "C:/xampp/htdocs/UsedMotorCars/used-motorcars-admin/uploads/post/" . $txtGalleryName . "/" . $file_name);
         }
       }
-
-      header('Location:../posts.php?posted');
     }
   } else {
     echo "query failure";
