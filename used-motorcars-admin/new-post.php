@@ -27,6 +27,9 @@ $type_query = mysqli_query($connection, $sql_type);
 $sql_fuel = "SELECT * FROM fueltype";
 $fuel_query = mysqli_query($connection, $sql_fuel);
 
+$sql_features = "SELECT * FROM features";
+$features_query = mysqli_query($connection, $sql_features);
+
 ?>
 <?php include 'includes/header.php'; ?>
 <div id="wrapper">
@@ -60,6 +63,9 @@ $fuel_query = mysqli_query($connection, $sql_fuel);
                                     <h4><span><i class="ti-marker-alt"></i></span>Features</h4>
                                 </li>
                                 <li role="tab">
+                                    <h4><span><i class="ti-marker-alt"></i></span>Extra Features</h4>
+                                </li>
+                                <li role="tab">
                                     <h4><span><i class="ti-image"></i></span>Images</h4>
                                 </li>
                                 <li role="tab">
@@ -68,6 +74,7 @@ $fuel_query = mysqli_query($connection, $sql_fuel);
                             </ul>
                             <form id="validation" class="form-horizontal" action="functions/new_post.php" method="post" enctype="multipart/form-data">
                                 <div class="wizard-content">
+                                 <!-- General -->
                                     <div class="wizard-pane active" role="tabpanel">
                                         <div class="form-group">
                                             <label class="col-xs-3 control-label">Reference Number</label>
@@ -95,6 +102,8 @@ $fuel_query = mysqli_query($connection, $sql_fuel);
                                                 <textarea type="text" class="form-control" name="moreDescription"></textarea> </div>
                                         </div>
                                     </div>
+                                    <!-- General -->
+                                    <!-- Features -->
                                     <div class="wizard-pane" role="tabpanel">
                                         <div class="form-group">
                                             <label class="col-xs-3 control-label">Chassis</label>
@@ -195,6 +204,22 @@ $fuel_query = mysqli_query($connection, $sql_fuel);
                                                 <input type="text" class="form-control" name="speed" /> </div>
                                         </div>
                                     </div>
+                                    <!-- Features -->
+                                    <!-- Extra Features -->
+                                    <div class="wizard-pane" role="tabpanel">
+                                    <div class="form-group">
+                                            <label class="col-xs-3 control-label">Extra Features</label>
+                                            <div class="col-xs-5">
+                                                <?php 
+                                                    while ($row_feature = mysqli_fetch_array($features_query)) {
+                                                        echo "<input type='checkbox' name='check_list[]' value='". $row_feature['code'] ."'> <span> ". $row_feature['name'] ." </span> <br/>";
+                                                    }
+                                                ?>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <!-- Extra Features -->
+                                    <!-- Images -->
                                     <div class="wizard-pane" role="tabpanel">
                                         <div class="form-group">
                                             <label class="col-xs-3 control-label">Select Photo (one or multiple)</label>
@@ -205,6 +230,8 @@ $fuel_query = mysqli_query($connection, $sql_fuel);
                                         <p>Note: Supported image format: .jpeg, .jpg, .png, .gif</p>
                                         <p style="color:red;">Best to insert more than 5 images</p>
                                     </div>
+                                    <!-- Images -->
+                                    <!-- Contact information -->
                                     <div class="wizard-pane" role="tabpanel">
                                         <div class="form-group">
                                             <label class="col-xs-3 control-label">Telephone Number</label>
@@ -223,6 +250,7 @@ $fuel_query = mysqli_query($connection, $sql_fuel);
                                             </div>
                                         </div>
                                     </div>
+                                    <!-- Contact information -->
                                 </div>
                                 <input type="submit" name="submit" value="Submit" class="btn btn-outline">
                             </form>

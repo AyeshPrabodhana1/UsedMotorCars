@@ -56,6 +56,13 @@ VALUES ('$ref_no', '$title', '$description', '$amount', '$chassis', '$distance',
 
       mysqli_query($conn, $query);
 
+      if (!empty($_POST['check_list'])) {
+        foreach($_POST['check_list'] as $check) {
+          $query_features = "INSERT INTO postfeatures (post_id,feature_id) VALUES ('$last_id', '$check')";
+          mysqli_query($conn, $query_features);
+        }
+      }
+
       header('Location:../posts.php?posted');
 
       if (in_array($ext, $extension)) {
