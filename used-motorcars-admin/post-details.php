@@ -229,15 +229,16 @@ if (isset($_GET['id'])) {
                                             <!-- End Modal -->
 
                                 ';
-                                echo '<h3>Extra Features </h3>' ;
+                                echo '<div class="col-lg-12">';
+                                echo '<h3>Extra Features </h3> <hr/>' ;
                                 $sql_features = "SELECT f.id ,f.name FROM postfeatures pf, features f where pf.feature_id = f.id and post_id = '$postid'";
                                 $query_features = mysqli_query($connection, $sql_features);
                                 while ($row_fea = mysqli_fetch_assoc($query_features)) {
                                     echo '
-                                        <p> '. $row_fea['name'] .'</p> <br/>
+                                        <p> '. $row_fea['name'] .'</p> 
                                     ';
                                 }
-                                
+                                echo '</div> <hr/>';
                                 $sql_images = "SELECT * from images where post_id ='$postid'";
                                 $query_img = mysqli_query($connection, $sql_images);
                                 while ($row_img = mysqli_fetch_assoc($query_img)) {
