@@ -2,6 +2,14 @@
 <?php include 'includes/loader.php'; ?>
 <?php include 'includes/navigation.php'; ?>
 
+<?php
+ob_start();
+require_once "util/connection.php";
+
+$sql_post = "SELECT * FROM posts";
+$query_list = mysqli_query($connection, $sql_post);
+
+?>
 
 <div class="page-heading wow fadeIn" data-wow-duration="0.5s">
 	<div class="container">
@@ -26,46 +34,58 @@
 			<div class="row">
 				<div class="col-md-8">
 					<div class="row">
-						<div class="col-md-12">
+
+						<?php
+						while ($row = mysqli_fetch_array($query_list)) {
+							echo '
+							<div class="col-md-12">
 							<div class="car-item">
 								<div class="row">
 									<div class="col-md-5">
 										<div class="thumb-content">
 											<div class="car-banner">
-												<a href="single_car.html">For Rent</a>
+												<a href="detail.php">For Sale</a>
 											</div>
 											<div class="thumb-inner">
-												<a href="single_car.html"><img src="http://placehold.it/370x345" alt=""></a>
-											</div>
+											';
+							$sql_post_image = "SELECT * FROM images where post_id = " . $row['id'] . "";
+							$query_image = mysqli_query($connection, $sql_post_image);
+							$firstrow = mysqli_fetch_assoc($query_image);
+							mysqli_data_seek($query_image, 0);
+							echo '
+												<a href="detail.php"><img src="../used-motorcars-admin/uploads/post/' . $firstrow["name"] . '" alt=""></a>
+												';
+
+							echo '		</div>
 										</div>
 									</div>
 									<div class="col-md-7">
 										<div class="down-content">
-											<a href="single_car.html">
-												<h4>Perfect Sport Car</h4>
+											<a href="detail.php">
+												<h4>' . $row['title'] . '</h4>
 											</a>
-											<span>$36.000</span>
+											<span>' . $row['amount'] . '</span>
 											<div class="line-dec"></div>
-											<p>Drinking vinegar hoodie street art, selvage you probably haven't heard of them put a bird on it semiotics heirloom.</p>
+											<p>' . $row['description'] . '</p>
 											<ul class="car-info">
 												<li>
 													<div class="item"><i class="flaticon flaticon-calendar"></i>
-														<p>2013</p>
+														<p>' . $row['vehicleYear'] . '</p>
 													</div>
 												</li>
 												<li>
 													<div class="item"><i class="flaticon flaticon-speed"></i>
-														<p>160p/h</p>
+														<p>' . $row['speed'] . 'p/h</p>
 													</div>
 												</li>
 												<li>
 													<div class="item"><i class="flaticon flaticon-road"></i>
-														<p>26.00km</p>
+														<p>' . $row['distance'] . '</p>
 													</div>
 												</li>
 												<li>
 													<div class="item"><i class="flaticon flaticon-fuel"></i>
-														<p>Petrol</p>
+														<p>' . $row['fuelId'] . '</p>
 													</div>
 												</li>
 											</ul>
@@ -74,246 +94,11 @@
 								</div>
 							</div>
 						</div>
-						<div class="col-md-12">
-							<div class="car-item">
-								<div class="row">
-									<div class="col-md-5">
-										<div class="thumb-content">
-											<div class="car-banner">
-												<a href="single_car.html">For Rent</a>
-											</div>
-											<div class="thumb-inner">
-												<a href="single_car.html"><img src="http://placehold.it/370x345" alt=""></a>
-											</div>
-										</div>
-									</div>
-									<div class="col-md-7">
-										<div class="down-content">
-											<a href="single_car.html">
-												<h4>Perfect Sport Car</h4>
-											</a>
-											<span>$36.000</span>
-											<div class="line-dec"></div>
-											<p>Drinking vinegar hoodie street art, selvage you probably haven't heard of them put a bird on it semiotics heirloom.</p>
-											<ul class="car-info">
-												<li>
-													<div class="item"><i class="flaticon flaticon-calendar"></i>
-														<p>2013</p>
-													</div>
-												</li>
-												<li>
-													<div class="item"><i class="flaticon flaticon-speed"></i>
-														<p>160p/h</p>
-													</div>
-												</li>
-												<li>
-													<div class="item"><i class="flaticon flaticon-road"></i>
-														<p>26.00km</p>
-													</div>
-												</li>
-												<li>
-													<div class="item"><i class="flaticon flaticon-fuel"></i>
-														<p>Petrol</p>
-													</div>
-												</li>
-											</ul>
-										</div>
-									</div>
-								</div>
-							</div>
-						</div>
-						<div class="col-md-12">
-							<div class="car-item">
-								<div class="row">
-									<div class="col-md-5">
-										<div class="thumb-content">
-											<div class="car-banner">
-												<a href="single_car.html">For Rent</a>
-											</div>
-											<div class="thumb-inner">
-												<a href="single_car.html"><img src="http://placehold.it/370x345" alt=""></a>
-											</div>
-										</div>
-									</div>
-									<div class="col-md-7">
-										<div class="down-content">
-											<a href="single_car.html">
-												<h4>Perfect Sport Car</h4>
-											</a>
-											<span>$36.000</span>
-											<div class="line-dec"></div>
-											<p>Drinking vinegar hoodie street art, selvage you probably haven't heard of them put a bird on it semiotics heirloom.</p>
-											<ul class="car-info">
-												<li>
-													<div class="item"><i class="flaticon flaticon-calendar"></i>
-														<p>2013</p>
-													</div>
-												</li>
-												<li>
-													<div class="item"><i class="flaticon flaticon-speed"></i>
-														<p>160p/h</p>
-													</div>
-												</li>
-												<li>
-													<div class="item"><i class="flaticon flaticon-road"></i>
-														<p>26.00km</p>
-													</div>
-												</li>
-												<li>
-													<div class="item"><i class="flaticon flaticon-fuel"></i>
-														<p>Petrol</p>
-													</div>
-												</li>
-											</ul>
-										</div>
-									</div>
-								</div>
-							</div>
-						</div>
-						<div class="col-md-12">
-							<div class="car-item">
-								<div class="row">
-									<div class="col-md-5">
-										<div class="thumb-content">
-											<div class="car-banner">
-												<a href="single_car.html">For Rent</a>
-											</div>
-											<div class="thumb-inner">
-												<a href="single_car.html"><img src="http://placehold.it/370x345" alt=""></a>
-											</div>
-										</div>
-									</div>
-									<div class="col-md-7">
-										<div class="down-content">
-											<a href="single_car.html">
-												<h4>Perfect Sport Car</h4>
-											</a>
-											<span>$36.000</span>
-											<div class="line-dec"></div>
-											<p>Drinking vinegar hoodie street art, selvage you probably haven't heard of them put a bird on it semiotics heirloom.</p>
-											<ul class="car-info">
-												<li>
-													<div class="item"><i class="flaticon flaticon-calendar"></i>
-														<p>2013</p>
-													</div>
-												</li>
-												<li>
-													<div class="item"><i class="flaticon flaticon-speed"></i>
-														<p>160p/h</p>
-													</div>
-												</li>
-												<li>
-													<div class="item"><i class="flaticon flaticon-road"></i>
-														<p>26.00km</p>
-													</div>
-												</li>
-												<li>
-													<div class="item"><i class="flaticon flaticon-fuel"></i>
-														<p>Petrol</p>
-													</div>
-												</li>
-											</ul>
-										</div>
-									</div>
-								</div>
-							</div>
-						</div>
-						<div class="col-md-12">
-							<div class="car-item">
-								<div class="row">
-									<div class="col-md-5">
-										<div class="thumb-content">
-											<div class="car-banner">
-												<a href="single_car.html">For Rent</a>
-											</div>
-											<div class="thumb-inner">
-												<a href="single_car.html"><img src="http://placehold.it/370x345" alt=""></a>
-											</div>
-										</div>
-									</div>
-									<div class="col-md-7">
-										<div class="down-content">
-											<a href="single_car.html">
-												<h4>Perfect Sport Car</h4>
-											</a>
-											<span>$36.000</span>
-											<div class="line-dec"></div>
-											<p>Drinking vinegar hoodie street art, selvage you probably haven't heard of them put a bird on it semiotics heirloom.</p>
-											<ul class="car-info">
-												<li>
-													<div class="item"><i class="flaticon flaticon-calendar"></i>
-														<p>2013</p>
-													</div>
-												</li>
-												<li>
-													<div class="item"><i class="flaticon flaticon-speed"></i>
-														<p>160p/h</p>
-													</div>
-												</li>
-												<li>
-													<div class="item"><i class="flaticon flaticon-road"></i>
-														<p>26.00km</p>
-													</div>
-												</li>
-												<li>
-													<div class="item"><i class="flaticon flaticon-fuel"></i>
-														<p>Petrol</p>
-													</div>
-												</li>
-											</ul>
-										</div>
-									</div>
-								</div>
-							</div>
-						</div>
-						<div class="col-md-12">
-							<div class="car-item">
-								<div class="row">
-									<div class="col-md-5">
-										<div class="thumb-content">
-											<div class="car-banner">
-												<a href="single_car.html">For Rent</a>
-											</div>
-											<div class="thumb-inner">
-												<a href="single_car.html"><img src="http://placehold.it/370x345" alt=""></a>
-											</div>
-										</div>
-									</div>
-									<div class="col-md-7">
-										<div class="down-content">
-											<a href="single_car.html">
-												<h4>Perfect Sport Car</h4>
-											</a>
-											<span>$36.000</span>
-											<div class="line-dec"></div>
-											<p>Drinking vinegar hoodie street art, selvage you probably haven't heard of them put a bird on it semiotics heirloom.</p>
-											<ul class="car-info">
-												<li>
-													<div class="item"><i class="flaticon flaticon-calendar"></i>
-														<p>2013</p>
-													</div>
-												</li>
-												<li>
-													<div class="item"><i class="flaticon flaticon-speed"></i>
-														<p>160p/h</p>
-													</div>
-												</li>
-												<li>
-													<div class="item"><i class="flaticon flaticon-road"></i>
-														<p>26.00km</p>
-													</div>
-												</li>
-												<li>
-													<div class="item"><i class="flaticon flaticon-fuel"></i>
-														<p>Petrol</p>
-													</div>
-												</li>
-											</ul>
-										</div>
-									</div>
-								</div>
-							</div>
-						</div>
+							';
+						}
+						?>
+
+
 						<div class="col-md-12">
 							<div class="page-numbers">
 								<div class="pagination-content">
@@ -341,7 +126,6 @@
 											</div>
 											<div class="text-content">
 												<h2>Quick Search</h2>
-												<span>We made a quick search just for you</span>
 											</div>
 										</div>
 										<div class="search-form">

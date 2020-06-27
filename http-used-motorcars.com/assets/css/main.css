@@ -1499,7 +1499,8 @@ only screen and (min-resolution:192dpi) and (max-width:1024px) {
     .on-grids .car-item .down-content,
     .recent-cars .car-item .down-content {
         padding: 20px;
-        text-align: left
+        text-align: left;
+        height: 325px;
     }
 
     .on-grids .car-item .down-content h4,
@@ -2960,9 +2961,9 @@ only screen and (min-resolution:192dpi) and (max-width:1024px) {
         position: absolute;
         content: ''
     }
-
+    
     .sidebar-widgets .sidebar-widget .search-content {
-        background-color: #030e21;
+        background-color: #455562;
         border-radius: 5px;
         -webkit-box-shadow: 0px 0px 20px rgba(0, 0, 0, 0.15);
         box-shadow: 0px 0px 20px rgba(0, 0, 0, 0.15);
@@ -3443,13 +3444,13 @@ footer .footer-item h2 {
 
 footer .footer-item h2 em {
     font-style: normal;
-    color: #f4c23d
+    color: #2a5aad
 }
 
 footer .footer-item h2:after {
     width: 30px;
     height: 3px;
-    background-color: #f4c23d;
+    background-color: #2a5aad;
     left: 0;
     top: 30px;
     position: absolute;
