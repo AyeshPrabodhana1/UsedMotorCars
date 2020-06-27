@@ -5,13 +5,11 @@
 					<div class="footer-item">
 						<div class="about-us">
 							<h2>About Us</h2>
-							<p>Irony actually meditation, occupy mumblecore wayfarers organic pickled 90's. Intelligentsia as actually +1 meh photo booth.</p>
+							<p>Used Motorcars have been around since before the internet, its longstanding reputation has built up decades of trust.</p>
 							<ul>
 								<li><a href="#"><i class="fa fa-facebook"></i></a></li>
 								<li><a href="#"><i class="fa fa-twitter"></i></a></li>
-								<li><a href="#"><i class="fa fa-behance"></i></a></li>
 								<li><a href="#"><i class="fa fa-linkedin"></i></a></li>
-								<li><a href="#"><i class="fa fa-dribbble"></i></a></li>
 							</ul>
 						</div>
 					</div>
@@ -21,11 +19,8 @@
 						<div class="what-offer">
 							<h2>What We Offer ?</h2>
 							<ul>
-								<li><a href="#">Rent a car now</a></li>
-								<li><a href="#">Search for sale</a></li>
-								<li><a href="#">Try search form</a></li>
-								<li><a href="#">Best daily dealers</a></li>
-								<li><a href="#">Weekly lucky person</a></li>
+								<li><a href="#">Shipping</a></li>
+								<li><a href="#">Documentation</a></li>
 							</ul>
 						</div>
 					</div>
@@ -35,16 +30,14 @@
 						<div class="need-help">
 							<h2>Need Help ?</h2>
 							<ul>
-								<li><a href="#">Modern wheels</a></li>
-								<li><a href="#">Awesome spoilers</a></li>
-								<li><a href="#">Dynamic Enetrior</a></li>
-								<li><a href="#">Save accidents </a></li>
-								<li><a href="#">Recorded Racing</a></li>
+								<li><a href="#">Find Cars</a></li>
+								<li><a href="#">How to Buy</a></li>
+								<li><a href="#">FAQ</a></li>
 							</ul>
 						</div>
 					</div>
 				</div>
-				<div class="col-md-3">
+				<div class="col-md-2">
 					<div class="footer-item">
 						<div class="our-gallery">
 							<h2>Our Gallery</h2>
@@ -53,17 +46,18 @@
 								<li><a href="#"><img src="http://placehold.it/70x70" alt=""></a></li>
 								<li><a href="#"><img src="http://placehold.it/70x70" alt=""></a></li>
 								<li><a href="#"><img src="http://placehold.it/70x70" alt=""></a></li>
-								<li><a href="#"><img src="http://placehold.it/70x70" alt=""></a></li>
-								<li><a href="#"><img src="http://placehold.it/70x70" alt=""></a></li>
 							</ul>
 						</div>
 					</div>
 				</div>
-				<div class="col-md-2">
+				<div class="col-md-3">
 					<div class="footer-item">
 						<div class="quick-search">
-							<h2>Quick Search</h2>
-							<input type="text" class="footer-search" name="s" placeholder="Search..." value="">
+							<h2>Contact Info</h2>
+							<p>Tel : +81-52-351-5541</p>
+							<p>Fax : +81-52-351-5542</p>
+							<p>+81-503-730-0844 (Direct-Sales Div)</p>
+							<p>sales@used-motorcars.com</p>
 						</div>
 					</div>
 				</div>

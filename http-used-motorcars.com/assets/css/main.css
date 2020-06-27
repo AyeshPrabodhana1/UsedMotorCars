@@ -534,7 +534,14 @@ section {
 .site-header .logo {
     float: left;
     background-repeat: no-repeat;
-    width: 220px;
+    width: 180px;
+    /* height: 80px; */
+    /* margin-top: 5px; */
+}
+
+.companyinfo {
+    float: left;
+    width: 300px;
     height: 80px;
     margin-top: 5px;
 }
