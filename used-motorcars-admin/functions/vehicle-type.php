@@ -6,7 +6,7 @@ $db = mysqli_connect("localhost", "root", "", "company");
 
 if (isset($_POST['save'])) {
     // path to store the uploaded image
-    $target = "C:/xampp/htdocs/github/used-motorcars-admin/uploads/type/" . basename($_FILES['image']['name']);
+    $target = "http://localhost/usedmotorcars/uploads/type/" . basename($_FILES['image']['name']);
 
     // retrieve form data
     $code = $_POST['code'];
@@ -29,7 +29,7 @@ if (isset($_POST['save'])) {
 if (isset($_POST["delete"])) {
     $id = $_POST["id"];
     $image = $_POST["image"];
-    $filePath = 'C:/xampp/htdocs/github/used-motorcars-admin/uploads/type/' . $image;
+    $filePath = 'http://localhost/usedmotorcars/uploads/type/' . $image;
 
     $sql = "DELETE FROM vehicle_type where id=$id";
 

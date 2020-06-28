@@ -2,6 +2,33 @@
 <?php include 'includes/loader.php'; ?>
 <?php include 'includes/navigation.php'; ?>
 
+<?php
+ob_start();
+require_once "util/connection.php";
+
+if (isset($_GET['id'])) {
+	$postid = $_GET['id'];
+}
+
+$sql = "SELECT 
+p.id, p.ref_no, p.title, p.description, p.amount, p.chassis, p.distance, tt.name as transmissionName, p.doors,
+vt.name as vehicleType, vb.name as vehicleBrand, p.model, p.engineSize, p.steering, p.seats, p.vehicleYear,
+ft.name as fuelType, p.color, p.speed, p.moreDescription, p.contactInfo, p.contactMobile, p.contactEmail,
+p.date
+FROM `posts` p 
+LEFT OUTER JOIN `transmissiontype` tt
+on p.transmissionId = tt.id
+LEFT OUTER JOIN `vehicle_type` vt
+on p.typeId = vt.id
+LEFT OUTER JOIN `vehicle_brand` vb
+on p.brandId = vb.id
+LEFT OUTER JOIN `fueltype` ft
+on p.fuelId = ft.id
+where p.id='$postid'";
+$query = mysqli_query($connection, $sql);
+
+?>
+
 <div class="page-heading wow fadeIn" data-wow-duration="0.5s">
 	<div class="container">
 		<div class="row">
@@ -18,79 +45,74 @@
 		</div>
 	</div>
 </div>
-
-<div class="recent-car single-car wow fadeIn" data-wow-delay="0.5s" data-wow-duration="1s">
+<?php
+while ($row = mysqli_fetch_assoc($query)) {
+	echo '
+	<div class="recent-car single-car wow fadeIn" data-wow-delay="0.5s" data-wow-duration="1s">
 	<div class="container">
 		<div class="recent-car-content">
 			<div class="row">
 				<div class="col-md-6">
 					<div id="single-car" class="slider-pro">
-						<div class="sp-slides">
+					<div class="sp-slides">
+					';
+	$sql_images = "SELECT * from images where post_id ='$postid'";
+	$query_img = mysqli_query($connection, $sql_images);
+	$query_img_thumb = mysqli_query($connection, $sql_images);
+	while ($row_img = mysqli_fetch_assoc($query_img)) {
+		echo '	
 
 							<div class="sp-slide">
-								<img class="sp-image" src="http://placehold.it/570x450" alt="" />
+								<img class="sp-image" src="http://localhost/usedmotorcars/uploads/post/' . $row_img["name"] . '" alt="" />
 							</div>
-
-							<div class="sp-slide">
-								<img class="sp-image" src="http://placehold.it/570x450" alt="" />
-							</div>
-
-							<div class="sp-slide">
-								<img class="sp-image" src="http://placehold.it/570x450" alt="" />
-							</div>
-
-							<div class="sp-slide">
-								<img class="sp-image" src="http://placehold.it/570x450" alt="" />
-							</div>
-
-							<div class="sp-slide">
-								<img class="sp-image" src="http://placehold.it/570x450" alt="" />
-							</div>
-
-						</div>
-
+	';
+	}
+	echo '						
+					</div>
 						<div class="sp-thumbnails">
-							<img class="sp-thumbnail" src="http://placehold.it/120x80" alt="" />
-							<img class="sp-thumbnail" src="http://placehold.it/120x80" alt="" />
-							<img class="sp-thumbnail" src="http://placehold.it/120x80" alt="" />
-							<img class="sp-thumbnail" src="http://placehold.it/120x80" alt="" />
-							<img class="sp-thumbnail" src="http://placehold.it/120x80" alt="" />
+						';
+	while ($row_img_thumb = mysqli_fetch_assoc($query_img_thumb)) {
+		echo '<img class="sp-thumbnail" src="http://localhost/usedmotorcars/uploads/post/' . $row_img_thumb["name"] . '" alt="" />';
+	}
+	echo '
 						</div>
+						';
+	echo '
 					</div>
 				</div>
 				<div class="col-md-6">
 					<div class="car-details">
-						<h4>Perfect Sport Car</h4>
-						<span>$45.000</span>
-						<p>Tattooed fashion axe Blue Bottle butcher tilde. Pitchfork leggings meh Odd Future.Drinking vinegar hoodie street art, selvage you probably haven't heard of them put a bird on it semiotis heirloom four loko roof.</p>
+						<h4>' . $row["title"] . '</h4>
+						<span>' . $row["amount"] . '</span>
+						<p>' . $row["description"] . '</p>
 						<div class="container">
 							<div class="row">
 								<ul class="car-info col-md-6">
 									<li><i class="flaticon flaticon-calendar"></i>
-										<p>2016/2017</p>
+										<p>' . $row['vehicleYear'] . '</p>
 									</li>
 									<li><i class="flaticon flaticon-speed"></i>
-										<p>240p/h</p>
+										<p>' . $row['speed'] . '</p>
 									</li>
 									<li><i class="flaticon flaticon-road"></i>
-										<p>20.000km - 40.000km</p>
+										<p>' . $row['distance'] . ' kms</p>
 									</li>
 									<li><i class="flaticon flaticon-fuel"></i>
-										<p>Diesel</p>
+										<p>' . $row['fuelType'] . '</p>
 									</li>
 								</ul>
 								<ul class="car-info col-md-6">
 									<li><i class="flaticon flaticon-art"></i>
-										<p>White</p>
+										<p>' . $row['color'] . '</p>
 									</li>
 									<li><i class="flaticon flaticon-shift"></i>
-										<p>Automatic</p>
+										<p>' . $row['transmissionName'] . '</p>
 									</li>
 									<li><i class="flaticon flaticon-car"></i>
-										<p>4/5</p>
+										<p>' . $row['doors'] . '</p>
 									</li>
 									<li><i class="flaticon flaticon-motor"></i>
-										<p>3000cm3</p>
+										<p>' . $row['engineSize'] . '</p>
 									</li>
 								</ul>
 							</div>
@@ -116,7 +138,7 @@
 						<div class="sep-section-heading">
 							<h2>More <em>Description</em></h2>
 						</div>
-						<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Obcaecati accusamus a iure nulla, sed non ex nobis eius esse distinctio imps sunt quia sint quis quisquam odio repellat.<br><br> <em>Eos non odit, corporis adipisci reprehenderit commodi sequi molestias blanditiis tenetur harum natus!</em><br><br>Illum quae, corrupti a ducimus voluptate velit praesentium dolorum earum unde nostrum.</p>
+						<p>' . $row["moreDescription"] . '</p>
 					</div>
 				</div>
 				<div class="col-md-4">
@@ -149,14 +171,14 @@
 						<div class="sep-section-heading">
 							<h2>Contact <em>Informations</em></h2>
 						</div>
-						<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Obcaecati accusamus a iure nulla, sed non ex nobis eius esse distinctio imps sunt quia sint quis quisquam odio repellat.</p>
+						<p>' . $row["contactInfo"] . '</p>
 						<div class="contact-info">
 							<div class="row">
 								<div class="phone col-md-12 col-sm-6 col-xs-6">
-									<i class="fa fa-phone"></i><span>+1 123 489-5748</span>
+									<i class="fa fa-phone"></i><span>' . $row["contactMobile"] . '</span>
 								</div>
 								<div class="mail col-md-12 col-sm-6 col-xs-6">
-									<i class="fa fa-envelope"></i><span>youremail@gmail.com</span>
+									<i class="fa fa-envelope"></i><span>' . $row["contactEmail"] . '	</span>
 								</div>
 							</div>
 						</div>
@@ -166,183 +188,8 @@
 		</div>
 	</div>
 </section>
-
-<section>
-	<div class="recent-car similar-car wow fadeIn" data-wow-duration="1s">
-		<div class="container">
-			<div class="recent-car-content">
-				<div class="row">
-					<div class="col-md-12">
-						<div class="section-heading">
-							<div class="icon">
-								<i class="fa fa-car"></i>
-							</div>
-							<div class="text-content">
-								<h2>Similar Cars</h2>
-								<span>You may like this too</span>
-							</div>
-						</div>
-					</div>
-				</div>
-				<div id="owl-similar" class="owl-carousel owl-theme">
-					<div class="item car-item">
-						<div class="thumb-content">
-							<div class="car-banner">
-								<a href="single_car.html">For Rent</a>
-							</div>
-							<a href="single_car.html"><img src="assets/images/car_item_1.jpg" alt=""></a>
-						</div>
-						<div class="down-content">
-							<a href="single_car.html">
-								<h4>Perfect Sport Car</h4>
-							</a>
-							<span>$36.000</span>
-						</div>
-					</div>
-					<div class="item car-item">
-						<div class="thumb-content">
-							<div class="car-banner">
-								<a href="single_car.html">For Sale</a>
-							</div>
-							<a href="single_car.html"><img src="assets/images/car_item_2.jpg" alt=""></a>
-						</div>
-						<div class="down-content">
-							<a href="single_car.html">
-								<h4>Perfect Sport Car</h4>
-							</a>
-							<span>$49.000</span>
-						</div>
-					</div>
-					<div class="item car-item">
-						<div class="thumb-content">
-							<div class="car-banner">
-								<a href="single_car.html">For Rent</a>
-							</div>
-							<a href="single_car.html"><img src="assets/images/car_item_3.jpg" alt=""></a>
-						</div>
-						<div class="down-content">
-							<a href="single_car.html">
-								<h4>Perfect Sport Car</h4>
-							</a>
-							<span>$42.000</span>
-						</div>
-					</div>
-					<div class="item car-item">
-						<div class="thumb-content">
-							<div class="car-banner">
-								<a href="single_car.html">For Rent</a>
-							</div>
-							<a href="single_car.html"><img src="assets/images/car_item_4.jpg" alt=""></a>
-						</div>
-						<div class="down-content">
-							<a href="single_car.html">
-								<h4>Perfect Sport Car</h4>
-							</a>
-							<span>$54.000</span>
-						</div>
-					</div>
-					<div class="item car-item">
-						<div class="thumb-content">
-							<div class="car-banner">
-								<a href="single_car.html">For Rent</a>
-							</div>
-							<a href="single_car.html"><img src="assets/images/car_item_5.jpg" alt=""></a>
-						</div>
-						<div class="down-content">
-							<a href="single_car.html">
-								<h4>Perfect Sport Car</h4>
-							</a>
-							<span>$42.000</span>
-						</div>
-					</div>
-					<div class="item car-item">
-						<div class="thumb-content">
-							<div class="car-banner">
-								<a href="single_car.html">For Rent</a>
-							</div>
-							<a href="single_car.html"><img src="assets/images/car_item_6.jpg" alt=""></a>
-						</div>
-						<div class="down-content">
-							<a href="single_car.html">
-								<h4>Perfect Sport Car</h4>
-							</a>
-							<span>$54.000</span>
-						</div>
-					</div>
-					<div class="item car-item">
-						<div class="thumb-content">
-							<div class="car-banner">
-								<a href="single_car.html">For Rent</a>
-							</div>
-							<a href="single_car.html"><img src="assets/images/car_item_1.jpg" alt=""></a>
-						</div>
-						<div class="down-content">
-							<a href="single_car.html">
-								<h4>Perfect Sport Car</h4>
-							</a>
-							<span>$42.000</span>
-						</div>
-					</div>
-					<div class="item car-item">
-						<div class="thumb-content">
-							<div class="car-banner">
-								<a href="single_car.html">For Rent</a>
-							</div>
-							<a href="single_car.html"><img src="assets/images/car_item_2.jpg" alt=""></a>
-						</div>
-						<div class="down-content">
-							<a href="single_car.html">
-								<h4>Perfect Sport Car</h4>
-							</a>
-							<span>$54.000</span>
-						</div>
-					</div>
-					<div class="item car-item">
-						<div class="thumb-content">
-							<div class="car-banner">
-								<a href="single_car.html">For Sale</a>
-							</div>
-							<a href="single_car.html"><img src="assets/images/car_item_3.jpg" alt=""></a>
-						</div>
-						<div class="down-content">
-							<a href="single_car.html">
-								<h4>Perfect Sport Car</h4>
-							</a>
-							<span>$23.000</span>
-						</div>
-					</div>
-					<div class="item car-item">
-						<div class="thumb-content">
-							<div class="car-banner">
-								<a href="single_car.html">For Rent</a>
-							</div>
-							<a href="single_car.html"><img src="assets/images/car_item_4.jpg" alt=""></a>
-						</div>
-						<div class="down-content">
-							<a href="single_car.html">
-								<h4>Perfect Sport Car</h4>
-							</a>
-							<span>$68.000</span>
-						</div>
-					</div>
-					<div class="item car-item">
-						<div class="thumb-content">
-							<div class="car-banner">
-								<a href="single_car.html">For Rent</a>
-							</div>
-							<a href="single_car.html"><img src="assets/images/car_item_5.jpg" alt=""></a>
-						</div>
-						<div class="down-content">
-							<a href="single_car.html">
-								<h4>Perfect Sport Car</h4>
-							</a>
-							<span>$36.000</span>
-						</div>
-					</div>
-				</div>
-			</div>
-		</div>
-	</div>
-</section>
+	';
+}
+?>
 
 <?php include 'includes/footer.php'; ?>

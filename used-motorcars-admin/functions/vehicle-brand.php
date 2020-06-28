@@ -2,7 +2,7 @@
 $msg = "";
 if (isset($_POST['save'])) {
     // path to store the uploaded image
-    $target = "C:/xampp/htdocs/github/used-motorcars-admin/uploads/brand/" . basename($_FILES['image']['name']);
+    $target = "http://localhost/usedmotorcars/uploads/brand/" . basename($_FILES['image']['name']);
 
     // connect to the database
     $db = mysqli_connect("localhost", "root", "", "company");
@@ -27,7 +27,7 @@ if (isset($_POST['save'])) {
 if (isset($_POST["delete"])) {
     $id = $_POST["id"];
     $image = $_POST["image"];
-    $filePath = 'C:/xampp/htdocs/github/used-motorcars-admin/uploads/brand/'.$image;
+    $filePath = 'http://localhost/usedmotorcars/uploads/brand/'.$image;
 
 
     // connect to the database

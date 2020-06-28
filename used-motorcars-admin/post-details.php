@@ -246,7 +246,7 @@ if (isset($_GET['id'])) {
                                         <div class="col-lg-4 col-md-9 col-sm-8 col-xs-12 ">
                                             <div class="media m-b-30">
                                                 <div class="media-body">
-                                                <p> <img src="uploads/post/' . $row_img["name"] . '"/></p>
+                                                <p> <img src="http://localhost/usedmotorcars/uploads/post/' . $row_img["name"] . '"/></p>
                                                 </div>
                                             </div>
                                         </div>

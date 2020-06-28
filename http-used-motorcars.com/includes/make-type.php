@@ -24,7 +24,7 @@ $query_type = mysqli_query($connection, $sql_type);
 								<li class="make-type">
 									<a href="list.php" class="text-light-black">
 										<span>
-											<img src="assets/images/category/make/' . $row_make["image"] . '" class="img-fluid" alt="brand-logo"/>
+											<img src="http://localhost/usedmotorcars/uploads/brand/' . $row_make["image"] . '" class="img-fluid" alt="brand-logo"/>
 									 	</span>
 									 	' . $row_make["name"] . '
 									</a>
@@ -47,7 +47,7 @@ $query_type = mysqli_query($connection, $sql_type);
 								<li class="make-type">
 									<a href="list.php" class="text-light-black">
 										<span>
-											<img src="assets/images/category/type/'. $row_type['image'] .'" class="img-fluid" alt="brand-logo" />
+											<img src="http://localhost/usedmotorcars/uploads/type/'. $row_type['image'] .'" class="img-fluid" alt="brand-logo" />
 										</span>
 										'. $row_type['name'] .'
 									</a>

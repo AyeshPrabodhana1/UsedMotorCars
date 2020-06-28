@@ -66,15 +66,15 @@ VALUES ('$ref_no', '$title', '$description', '$amount', '$chassis', '$distance',
       header('Location:../posts.php?posted');
 
       if (in_array($ext, $extension)) {
-        if (!file_exists("C:/xampp/htdocs/UsedMotorCars/used-motorcars-admin/uploads/post/" . $txtGalleryName . "/" . $file_name)) {
-          move_uploaded_file($file_tmp = $_FILES["files"]["tmp_name"][$key], "C:/xampp/htdocs/UsedMotorCars/used-motorcars-admin/uploads/post/" . $txtGalleryName . "/" . $file_name);
+        if (!file_exists("http://localhost/usedmotorcars/uploads/post/" . $txtGalleryName . "/" . $file_name)) {
+          move_uploaded_file($file_tmp = $_FILES["files"]["tmp_name"][$key], "http://localhost/usedmotorcars/uploads/post/" . $txtGalleryName . "/" . $file_name);
         }
       }
     }
   } else {
     echo "query failure";
     echo "Error: " . $sql . "<br>" . $conn->error;
-    // header('Location:../posts.php?post_error');
+    header('Location:../posts.php?post_error');
   }
 }
 

@@ -25,12 +25,12 @@ $query_list = mysqli_query($connection, $sql_post);
                             $firstrow = mysqli_fetch_assoc($query_image);
                             mysqli_data_seek($query_image, 0);
                             echo '
-                            <a href="detail.php"><img src="../used-motorcars-admin/uploads/post/' . $firstrow["name"] . '" alt=""></a>
+                            <a href="detail.php?id=' . $row["id"] . '"><img src="http://localhost/usedmotorcars/uploads/post/' . $firstrow["name"] . '" alt=""></a>
                             ';
                             echo '
                                 </div>
                             <div class="down-content">
-                                <a href="detail.php">
+                                <a href="detail.php?id=' . $row["id"] . '">
                                     <h4>' . $row['title'] . '</h4>
                                 </a>
                                 <span>' . $row['amount'] . '</span>

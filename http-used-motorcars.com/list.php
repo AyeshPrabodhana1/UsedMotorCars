@@ -44,7 +44,7 @@ $query_list = mysqli_query($connection, $sql_post);
 									<div class="col-md-5">
 										<div class="thumb-content">
 											<div class="car-banner">
-												<a href="detail.php">For Sale</a>
+												<a href="detail.php?id=' . $row["id"] . '"">For Sale</a>
 											</div>
 											<div class="thumb-inner">
 											';
@@ -53,7 +53,7 @@ $query_list = mysqli_query($connection, $sql_post);
 							$firstrow = mysqli_fetch_assoc($query_image);
 							mysqli_data_seek($query_image, 0);
 							echo '
-												<a href="detail.php"><img src="../used-motorcars-admin/uploads/post/' . $firstrow["name"] . '" alt=""></a>
+												<a href="detail.php"><img src="http://localhost/usedmotorcars/uploads/post/' . $firstrow["name"] . '" alt=""></a>
 												';
 
 							echo '		</div>
@@ -83,9 +83,15 @@ $query_list = mysqli_query($connection, $sql_post);
 														<p>' . $row['distance'] . '</p>
 													</div>
 												</li>
+												';
+							$sql_post_fuel = "SELECT * FROM fueltype where id = " . $row['fuelId'] . "";
+							$query_fuel = mysqli_query($connection, $sql_post_fuel);
+							$fuelrow = mysqli_fetch_assoc($query_fuel);
+							mysqli_data_seek($query_fuel, 0);
+							echo '
 												<li>
 													<div class="item"><i class="flaticon flaticon-fuel"></i>
-														<p>' . $row['fuelId'] . '</p>
+														<p>' . $fuelrow['name'] . '</p>
 													</div>
 												</li>
 											</ul>
