@@ -245,7 +245,7 @@ $features_query = mysqli_query($connection, $sql_features);
                                     </div>
                                     <!-- Contact information -->
                                 </div>
-                                <input type="submit" name="submit" value="Submit" class="btn btn-outline">
+                                <button type="submit" name="submit" class="btn btn-outline">Submit</
                             </form>
                         </div>
                     </div>
@@ -346,7 +346,9 @@ $features_query = mysqli_query($connection, $sql_features);
                 step.$pane.collapse('hide');
             },
             onFinish: function() {
-                alert('finish');
+                $("#validation").submit(function(e) {
+                    e.preventDefault();
+                });
             }
         });
     })();

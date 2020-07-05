@@ -47,6 +47,14 @@ VALUES ('$ref_no', '$title', '$description', '$amount', '$chassis', '$distance',
 
   if ($conn->query($sql) === TRUE) {
     $last_id = $conn->insert_id;
+
+    if (!empty($_POST['check_list'])) {
+      foreach($_POST['check_list'] as $selected) {
+        $query_features = "INSERT INTO postfeatures (post_id,feature_id) VALUES ('$last_id', '$selected')";
+        mysqli_query($conn, $query_features);
+      }
+    }
+    
     foreach ($_FILES["files"]["tmp_name"] as $key => $tmp_name) {
       $file_name = $_FILES["files"]["name"][$key];
       $file_tmp = $_FILES["files"]["tmp_name"][$key];
@@ -56,21 +64,14 @@ VALUES ('$ref_no', '$title', '$description', '$amount', '$chassis', '$distance',
 
       mysqli_query($conn, $query);
 
-      if (!empty($_POST['check_list'])) {
-        foreach($_POST['check_list'] as $selected) {
-          $query_features = "INSERT INTO postfeatures (post_id,feature_id) VALUES ('$last_id', '$selected')";
-          mysqli_query($conn, $query_features);
-        }
-      }
-
-      header('Location:../posts.php?posted');
-
       if (in_array($ext, $extension)) {
-        if (!file_exists("http://localhost/usedmotorcars/uploads/post/" . $txtGalleryName . "/" . $file_name)) {
-          move_uploaded_file($file_tmp = $_FILES["files"]["tmp_name"][$key], "http://localhost/usedmotorcars/uploads/post/" . $txtGalleryName . "/" . $file_name);
+        if (!file_exists("C:/xampp/htdocs/UsedMotorCars/uploads/post/" . $txtGalleryName . "/" . $file_name)) {
+          move_uploaded_file($file_tmp = $_FILES["files"]["tmp_name"][$key], "C:/xampp/htdocs/UsedMotorCars/uploads/post/" . $txtGalleryName . "/" . $file_name);
         }
       }
     }
+
+    header('Location:../posts.php?posted');
   } else {
     echo "query failure";
     echo "Error: " . $sql . "<br>" . $conn->error;
