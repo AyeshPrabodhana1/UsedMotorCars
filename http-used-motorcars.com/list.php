@@ -44,7 +44,7 @@ $query_list = mysqli_query($connection, $sql_post);
 									<div class="col-md-5">
 										<div class="thumb-content">
 											<div class="car-banner">
-												<a href="detail.php?id=' . $row["id"] . '"">For Sale</a>
+												<a href="detail.php?id=' . $row["id"] . '">For Sale</a>
 											</div>
 											<div class="thumb-inner">
 											';
@@ -53,7 +53,7 @@ $query_list = mysqli_query($connection, $sql_post);
 							$firstrow = mysqli_fetch_assoc($query_image);
 							mysqli_data_seek($query_image, 0);
 							echo '
-												<a href="detail.php"><img src="http://localhost/usedmotorcars/uploads/post/' . $firstrow["name"] . '" alt=""></a>
+												<a href="detail.php?id=' . $row["id"] . '"><img src="http://localhost/usedmotorcars/uploads/post/' . $firstrow["name"] . '" alt=""></a>
 												';
 
 							echo '		</div>
