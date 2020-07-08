@@ -1585,7 +1585,7 @@ only screen and (min-resolution:192dpi) and (max-width:1024px) {
 
     .on-grids .car-item .down-content ul li .item:hover,
     .recent-cars .car-item .down-content ul li .item:hover {
-        background-color: #f43d3d;
+        background-color: #2a5aad;
     }
 
     .on-grids .car-item .down-content ul li .item:hover i,
@@ -3697,7 +3697,7 @@ footer .sub-footer p a:hover {
 
 img {
     max-width: 100%;
-    width: auto;
+    width: 150px;
     height: auto;
 }
 
