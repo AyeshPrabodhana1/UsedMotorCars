@@ -118,7 +118,7 @@ section {
 
 .secondary-button a {
     display: inline-block;
-    background: #f43d3d;
+    background: #282f34;
     padding: 10px 20px;
     text-align: center;
     letter-spacing: 0.5px;
@@ -126,7 +126,7 @@ section {
     font-weight: 600;
     border-radius: 5px;
     text-transform: uppercase;
-    color: #1e1e1e;
+    color: #fff;
     -webkit-transition: all 0.3s;
     -o-transition: all 0.3s;
     transition: all 0.3s
@@ -360,8 +360,8 @@ section {
 }
 
 .page-heading {
-    /* background-image: url(../images/header/header.jpg); */
-    background-image: url('https://images.pexels.com/photos/544542/pexels-photo-544542.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940');
+    background-image: url(../images/banner/banner_flat_03.jpg);
+    /* background-image: url('https://images.pexels.com/photos/544542/pexels-photo-544542.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940'); */
     background-position: center center;
     background-size: cover;
     background-repeat: no-repeat;
@@ -394,7 +394,7 @@ section {
 
 .page-heading .heading-content-bg .heading-content h2 em {
     font-style: normal;
-    color: #f43d3d;
+    color: #e8a9a9;
 }
 
 .page-heading .heading-content-bg .heading-content p {
@@ -403,7 +403,7 @@ section {
     letter-spacing: 1px;
     font-weight: 300;
     text-transform: uppercase;
-    color: #f43d3d;
+    color: #e8a9a9;
 }
 
 .page-heading .heading-content-bg .heading-content p a {
@@ -428,8 +428,8 @@ section {
 }
 
 .section-heading .icon i {
-    color: #1e1e1e;
-    background-color: #f43d3d;
+    color: #fff;
+    background-color: #272e33;
     border-radius: 50%;
     font-size: 18px;
     width: 44px;
@@ -488,7 +488,7 @@ section {
 
 .sep-section-heading h2 em {
     font-style: normal;
-    color: #f43d3d;
+    color: #1e2e52;
 }
 
 .sep-section-heading h2:after {
@@ -1020,7 +1020,8 @@ only screen and (min-resolution:192dpi) and (max-width:1024px) {
         top: 0px;
         left: 0px;
         line-height: 75vh;
-        text-align: center
+        text-align: center;
+        background: #ffffff40;
     }
 
     .Modern-Slider .item .info>div {
@@ -1117,7 +1118,7 @@ only screen and (min-resolution:192dpi) and (max-width:1024px) {
 
     .Modern-Slider .item h3 {
         text-transform: uppercase;
-        color: #FFF;
+        color: #000;
         -webkit-animation: fadeOutRight 1s both;
         animation: fadeOutRight 1s both;
         margin-top: 15px;
@@ -1128,7 +1129,7 @@ only screen and (min-resolution:192dpi) and (max-width:1024px) {
     }
 
     .Modern-Slider .item h3 em {
-        color: #f43d3d;
+        color: #000;
         font-style: normal
     }
 
@@ -1334,7 +1335,6 @@ only screen and (min-resolution:192dpi) and (max-width:1024px) {
         border-radius: 5px;
         padding: 15px;
         margin-bottom: 45px;
-        opacity: 0.9;
     }
 
     section.top-slider-features .slider-top-features .car-item {
@@ -1513,7 +1513,8 @@ only screen and (min-resolution:192dpi) and (max-width:1024px) {
         border-top-left-radius: 5px;
         width: 100%;
         overflow: hidden;
-        background-size: cover
+        background-size: cover;
+        height: 240px;
     }
 
     .on-grids .car-item .down-content,
@@ -1824,7 +1825,7 @@ only screen and (min-resolution:192dpi) and (max-width:1024px) {
         text-align: center;
         line-height: 40px;
         border-radius: 3px;
-        background-color: #f43d3d;
+        /* background-color: #f43d3d; */
         color: #1e1e1e
     }
 
@@ -1885,7 +1886,7 @@ only screen and (min-resolution:192dpi) and (max-width:1024px) {
     .more-details .item .contact-info i {
         width: 40px;
         height: 40px;
-        background-color: #f43d3d;
+        /* background-color: #f43d3d; */
         text-align: center;
         line-height: 40px;
         border-radius: 3px;
@@ -1927,6 +1928,7 @@ only screen and (min-resolution:192dpi) and (max-width:1024px) {
     }
 
     .owl-carousel .owl-item img {
+        height: 135px;
         border-top-right-radius: 5px;
         border-top-left-radius: 5px
     }
@@ -2989,7 +2991,7 @@ only screen and (min-resolution:192dpi) and (max-width:1024px) {
         box-shadow: 0px 0px 20px rgba(0, 0, 0, 0.15);
         padding: 0px 30px 30px 30px;
         width: 100%;
-        border-top: 3px solid #f43d3d;
+        border-top: 3px solid #272e33;
     }
 
     @media (max-width:991px) {
@@ -3007,8 +3009,8 @@ only screen and (min-resolution:192dpi) and (max-width:1024px) {
     }
 
     .sidebar-widgets .sidebar-widget .search-content .search-heading .icon i {
-        color: #1e1e1e;
-        background-color: #f43d3d;
+        color: #fff;
+        background-color: #272e33;
         border-radius: 50%;
         font-size: 18px;
         width: 44px;
@@ -3023,7 +3025,7 @@ only screen and (min-resolution:192dpi) and (max-width:1024px) {
     .sidebar-widgets .sidebar-widget .search-content .search-heading .icon i:after {
         width: 44px;
         height: 3px;
-        background-color: #f43d3d;
+        background-color: #ffffff;
         position: absolute;
         left: 50%;
         -webkit-transform: translateX(-50%);
@@ -3282,7 +3284,6 @@ only screen and (min-resolution:192dpi) and (max-width:1024px) {
     }
 
     .more-about-us .right-content {
-        margin-top: 20px;
         background-color: #fff;
         padding: 30px 30px 15px 30px;
         border-radius: 5px;
@@ -3498,7 +3499,7 @@ footer .footer-item ul li a {
 }
 
 footer .footer-item ul li a:hover {
-    color: #f43d3d;
+    color: #515f69;
     -webkit-transition: all 0.5s;
     -o-transition: all 0.5s;
     transition: all 0.5s
@@ -3575,8 +3576,8 @@ footer .footer-item .about-us ul li a {
 }
 
 footer .footer-item .about-us ul li a:hover {
-    color: #1e1e1e;
-    background-color: #f43d3d;
+    color: #fff;
+    background-color: #515f69;
 }
 
 footer .footer-item .our-gallery ul li {
@@ -3611,7 +3612,7 @@ footer .footer-item .quick-search input {
 
 footer .footer-item .quick-search input:focus {
     outline: none;
-    border: 1px solid #f43d3d;
+    border: 1px solid #515f69;
 }
 
 footer .sub-footer {
@@ -3631,7 +3632,7 @@ footer .sub-footer p {
 }
 
 footer .sub-footer p a {
-    color: #f43d3d;
+    color: #fff;
     -webkit-transition: all 0.5s;
     -o-transition: all 0.5s;
     transition: all 0.5s

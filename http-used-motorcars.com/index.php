@@ -5,7 +5,7 @@
 	<!-- Slide 1 -->
 	<div class="item">
 		<div class="img-fill">
-			<img src="assets/images/banner/banner_flat_08.jpg" alt="banner">
+			<img src="assets/images/banner/banner_flat_10.jpg" alt="banner">
 			<div class="info">
 				<div>
 					<h3>Looking For Your Perffect <em>Car</em>?</h3>

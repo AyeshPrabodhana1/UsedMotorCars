@@ -61,7 +61,7 @@ $query_list = mysqli_query($connection, $sql_post);
 									</div>
 									<div class="col-md-7">
 										<div class="down-content">
-											<a href="detail.php">
+											<a href="detail.php?id=' . $row["id"] . '">
 												<h4>' . $row['title'] . '</h4>
 											</a>
 											<span>' . $row['amount'] . '</span>
