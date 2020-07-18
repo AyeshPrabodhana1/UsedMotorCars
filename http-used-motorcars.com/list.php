@@ -105,7 +105,7 @@ $query_list = mysqli_query($connection, $sql_post);
 						?>
 
 
-						<div class="col-md-12">
+						<!-- <div class="col-md-12">
 							<div class="page-numbers">
 								<div class="pagination-content">
 									<ul>
@@ -117,7 +117,7 @@ $query_list = mysqli_query($connection, $sql_post);
 									</ul>
 								</div>
 							</div>
-						</div>
+						</div> -->
 					</div>
 				</div>
 				<div class="col-md-4">

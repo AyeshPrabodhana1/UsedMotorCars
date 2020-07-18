@@ -85,7 +85,7 @@ section {
 
 .primary-button a:hover {
     color: #1e1e1e;
-    background-color: #f43d3d;
+    background-color: #4e5b65;
 }
 
 #search button {
@@ -394,7 +394,7 @@ section {
 
 .page-heading .heading-content-bg .heading-content h2 em {
     font-style: normal;
-    color: #e8a9a9;
+    color: #fff;
 }
 
 .page-heading .heading-content-bg .heading-content p {
@@ -403,7 +403,7 @@ section {
     letter-spacing: 1px;
     font-weight: 300;
     text-transform: uppercase;
-    color: #e8a9a9;
+    color: #fff;
 }
 
 .page-heading .heading-content-bg .heading-content p a {
@@ -1385,7 +1385,7 @@ only screen and (min-resolution:192dpi) and (max-width:1024px) {
     section.top-slider-features .slider-top-features .car-item .down-content span {
         font-size: 14px;
         font-weight: 700;
-        color: #2959ad;
+        color: #4e5b65;
         margin-bottom: 0px
     }
 
@@ -1536,7 +1536,7 @@ only screen and (min-resolution:192dpi) and (max-width:1024px) {
     .recent-cars .car-item .down-content span {
         font-size: 15px;
         font-weight: 900;
-        color: #2959ad;
+        color: #4e5b65;
         margin-bottom: 0px
     }
 
@@ -1586,7 +1586,7 @@ only screen and (min-resolution:192dpi) and (max-width:1024px) {
 
     .on-grids .car-item .down-content ul li .item:hover,
     .recent-cars .car-item .down-content ul li .item:hover {
-        background-color: #2a5aad;
+        background-color: #4e5b65;
     }
 
     .on-grids .car-item .down-content ul li .item:hover i,
@@ -1693,7 +1693,7 @@ only screen and (min-resolution:192dpi) and (max-width:1024px) {
     .on-listing .car-item .down-content span {
         font-size: 15px;
         font-weight: 900;
-        color: #2959ad;
+        color: #4e5b65;
         margin-bottom: 0px
     }
 
@@ -1736,7 +1736,7 @@ only screen and (min-resolution:192dpi) and (max-width:1024px) {
     }
 
     .on-listing .car-item .down-content ul li .item:hover {
-        background-color: #f43d3d;
+        background-color: #4e5b65;
     }
 
     .on-listing .car-item .down-content ul li .item:hover i {
@@ -1794,7 +1794,7 @@ only screen and (min-resolution:192dpi) and (max-width:1024px) {
     .single-car .car-details span {
         font-size: 20px;
         font-weight: 700;
-        color: #2959ad
+        color: #4e5b65;
     }
 
     .single-car .car-details p {
@@ -3471,7 +3471,7 @@ footer .footer-item h2 em {
 footer .footer-item h2:after {
     width: 30px;
     height: 3px;
-    background-color: #2a5aad;
+    background-color: #4e5b65;
     left: 0;
     top: 30px;
     position: absolute;
@@ -3698,7 +3698,6 @@ footer .sub-footer p a:hover {
 
 img {
     max-width: 100%;
-    width: 150px;
     height: auto;
 }
 
@@ -3833,4 +3832,13 @@ ul li, ol li {
     -webkit-box-orient: vertical;
     -webkit-line-clamp: 3;
     height: 64px;
+}
+
+
+.main-slider-title {
+    overflow: hidden;
+    text-overflow: ellipsis;
+    display: -webkit-box;
+    -webkit-box-orient: vertical;
+    -webkit-line-clamp: 1;
 }

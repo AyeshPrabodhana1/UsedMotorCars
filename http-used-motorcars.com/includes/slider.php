@@ -31,7 +31,7 @@ $query_list = mysqli_query($connection, $sql_post);
                                 </div>
                             <div class="down-content">
                                 <a href="detail.php?id=' . $row["id"] . '">
-                                    <h4>' . $row['title'] . '</h4>
+                                    <h4 class="main-slider-title">' . $row['title'] . '</h4>
                                 </a>
                                 <span>' . $row['amount'] . '</span>
                             </div>

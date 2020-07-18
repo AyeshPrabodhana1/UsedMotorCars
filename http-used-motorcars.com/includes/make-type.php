@@ -15,7 +15,7 @@ $query_type = mysqli_query($connection, $sql_type);
 			<div class="col-md-6">
 				<div class="car-browse-make-type">
 					<h5 class="text-light-black">
-						Browse by <span class="text-orange">Category</span>
+						Browse by <span class="text-blue">Category</span>
 					</h5>
 					<ul class="make">
 						<?php
@@ -38,7 +38,7 @@ $query_type = mysqli_query($connection, $sql_type);
 			<div class="col-md-6">
 				<div class="car-browse-make-type">
 					<h5 class="text-light-black">
-						Browse by <span class="text-orange">Type</span>
+						Browse by <span class="text-blue">Type</span>
 					</h5>
 					<ul class="make">
 						<?php
