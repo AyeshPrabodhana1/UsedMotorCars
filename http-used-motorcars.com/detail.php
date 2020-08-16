@@ -10,6 +10,9 @@ if (isset($_GET['id'])) {
 	$postid = $_GET['id'];
 }
 
+$sql_country = "SELECT * FROM country order by id";
+$query_country = mysqli_query($connection, $sql_country);
+
 $sql = "SELECT 
 p.id, p.ref_no, p.title, p.description, p.amount, p.chassis, p.distance, tt.name as transmissionName, p.doors,
 vt.name as vehicleType, vb.name as vehicleBrand, p.model, p.engineSize, p.steering, p.seats, p.vehicleYear,
@@ -212,11 +215,12 @@ while ($row = mysqli_fetch_assoc($query)) {
 							<div class="form-group">
 								<label for="countrySelect" class="title">Country where the vehicle will be used /registered</label>
 								<select class="form-control" id="countrySelect">
-									<option>1</option>
-									<option>2</option>
-									<option>3</option>
-									<option>4</option>
-									<option>5</option>
+									<option>--- Select Country --</option>
+									<?php
+									while ($country = mysqli_fetch_array($query_country)) {
+										echo "<option value=$country[id]>$country[name]</option>";
+									}
+									?>
 								</select>
 							</div>
 						</div>
@@ -227,18 +231,14 @@ while ($row = mysqli_fetch_assoc($query)) {
 						</div>
 						<div class="col-md-6">
 							<div class="form-group">
-								<label for="countrySelect" class="title">Port where the vehicle will be delivered</label>
-								<select class="form-control" id="countrySelect">
-									<option>1</option>
-									<option>2</option>
-									<option>3</option>
-									<option>4</option>
-									<option>5</option>
+								<label for="portSelect" class="title">Port where the vehicle will be delivered</label>
+								<select class="form-control" id="portSelect">
+									<option>--- Select Port --</option>
 								</select>
 							</div>
 						</div>
 					</div>
-					<div class="container">
+					<div class="container" id="payment">
 						<div class="row">
 							<p class="title">C&F INFORMATION</p>
 						</div>
@@ -246,16 +246,14 @@ while ($row = mysqli_fetch_assoc($query)) {
 							<div class="col-md-3 charge-info-title">
 								FOB price
 							</div>
-							<div class="col-md-2 charge-info">
-								US$ 5,000
+							<div class="col-md-2 charge-info" id="fob_charges">
 							</div>
 						</div>
 						<div class="row">
 							<div class="col-md-3 charge-info-title">
 								Freight (By Ro-Ro)
 							</div>
-							<div class="col-md-2 charge-info">
-								US$ 0
+							<div class="col-md-2 charge-info" id="freight_charges">
 							</div>
 						</div>
 						<br />
@@ -263,35 +261,34 @@ while ($row = mysqli_fetch_assoc($query)) {
 							<div class="col-md-3 charge-info-title">
 								Total
 							</div>
-							<div class="col-md-2 total-charge">
-								US$ 5,000
+							<div class="col-md-2 total-charge" id="total_charges">
 							</div>
 						</div>
 					</div>
-					<button style="margin-bottom: 25px; float: right;" class="btn btn-secondary" onclick="continueProcess()">Continue</button>
+					<button id="continueProcess" style="margin-bottom: 25px; float: right;" class="btn btn-secondary" onclick="continueProcess()">Continue</button>
 				</div>
 				<div class="container" id="secondaryScreen">
 					<i class="fa fa-arrow-left" style="font-size: 20px;color: red;" onclick="continueProcess()"></i>
 					<form>
-						<div class="col-md-8 col-md-off-2">
+						<div class="col-md-12">
 							<div class="form-group">
 								<label for="countrySelect" class="title">Name</label>
-								<input type="text" class="form-control" />
+								<input type="text" class="form-control" required/>
 							</div>
 							<div class="form-group">
 								<label for="countrySelect" class="title">E-mail</label>
-								<input type="text" class="form-control" />
+								<input type="email" class="form-control" required/>
 							</div>
 							<div class="form-group">
 								<label for="countrySelect" class="title">Telephone</label>
-								<input type="text" class="form-control" />
+								<input type="text" class="form-control" required/>
 							</div>
 							<div class="form-group">
 								<label for="countrySelect" class="title">Enquiry</label>
-								<textarea type="text" class="form-control"></textarea>
+								<textarea type="text" class="form-control" required></textarea>
 							</div>
-							<button type="submit" class="btn btn-primary">Submit</button>
-							<button type="button" class="btn btn-secondary">Reset</button>
+							<button style="float: right;" type="button" class="btn btn-secondary">Reset</button>
+							<button style="float: right; margin-right: 15px" type="submit" class="btn btn-primary">Submit</button>
 						</div>
 					</form>
 				</div>
@@ -304,8 +301,51 @@ while ($row = mysqli_fetch_assoc($query)) {
 		$(document).ready(function() {
 			var x = document.getElementById("secondaryScreen");
 			var xx = document.getElementById("secondaryScreenHeader");
+			var xxx = document.getElementById("payment");
+			var xxxx = document.getElementById("continueProcess");
+
 			x.style.display = "none";
 			xx.style.display = "none";
+			xxx.style.display = "none";
+			xxxx.style.display = "none";
+		});
+
+		$(document).ready(function() {
+			$("#countrySelect").change(function() {
+				var x = document.getElementById("payment");
+				var xx = document.getElementById("continueProcess");
+				x.style.display = "none";
+				xx.style.display = "none";
+				var country = $("#countrySelect").val();
+				$.ajax({
+					type: "post",
+					url: "functions/port.php",
+					data: "country=" + country,
+					success: function(data) {
+						$("#portSelect").html(data);
+					}
+				});
+			});
+
+			$("#portSelect").change(function() {
+				var port = $("#portSelect").val();
+				var x = document.getElementById("payment");
+				var xx = document.getElementById("continueProcess");
+				$.ajax({
+					type: "post",
+					url: "functions/payment.php",
+					data: "port=" + port,
+					success: function(data) {
+						var myObj = $.parseJSON(data);
+						$('#fob_charges').text(myObj['fob']);
+						$('#freight_charges').text(myObj['freight']);
+						$('#total_charges').text(Number(myObj['fob']) + Number(myObj['freight']));
+						x.style.display = "block";
+						xx.style.display = "block";
+					}
+				});
+			});
+
 		});
 
 		function continueProcess() {
