@@ -360,13 +360,13 @@ section {
 }
 
 .page-heading {
-    background-image: url(../images/banner/banner_flat_03.jpg);
-    /* background-image: url('https://images.pexels.com/photos/544542/pexels-photo-544542.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940'); */
+    /* background-image: url(../images/banner/banner_flat_03.jpg); */
+    background-image: url('https://images.pexels.com/photos/3972753/pexels-photo-3972753.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940');
     background-position: center center;
     background-size: cover;
     background-repeat: no-repeat;
     width: 100%;
-    padding: 160px 0px 80px 0px;
+    padding: 200px 0px 80px 0px;
     margin-bottom: 80px
 }
 
@@ -511,31 +511,31 @@ section {
     top: 0;
     left: 0;
     width: 100%;
-    background-color: rgba(0, 1, 19, 0.56)!important;
+    background-color: rgba(0, 1, 19, 0.596)!important;
     border-bottom: none!important;
     -webkit-box-shadow: 0px 1px 20px 0px rgba(0, 0, 0, 0.1);
     box-shadow: 0px 1px 20px 0px rgba(0, 0, 0, 0.1)
 }
 
 .scrolled-header #cssmenu>ul>li>a {
-    color: #ffffff!important
+    color: #fff!important
 }
 
 .scrolled-header #cssmenu>ul>li:hover>a {
-    color: #755656!important;
+    color: #fff!important;
 }
 
 .scrolled-header #cssmenu>ul>li.has-sub>a:after {
-    background: #1e1e1e!important
+    background: #fff!important
 }
 
 .scrolled-header #cssmenu>ul>li.has-sub>a:before {
-    background: #1e1e1e!important
+    background: #fff!important
 }
 
 .scrolled-header #cssmenu ul ul li:hover>a,
 .scrolled-header #cssmenu ul ul li a:hover {
-    color: #755656!important;
+    color: #566a75!important;
 }
 
 .site-header {
@@ -544,7 +544,7 @@ section {
     top: 0;
     left: 0;
     width: 100%;
-    background-color: rgba(250, 250, 250, 0);
+    background-color: rgba(250, 250, 250, 0.952);
     border-bottom: 1px solid rgba(250, 250, 250, 0.1);
     -webkit-transition: background 0.5s ease-in-out, height 0.5s ease-in-out;
     -o-transition: background 0.5s ease-in-out, height 0.5s ease-in-out;
@@ -554,9 +554,7 @@ section {
 .site-header .logo {
     float: left;
     background-repeat: no-repeat;
-    width: 180px;
-    /* height: 80px; */
-    /* margin-top: 5px; */
+    width: 155px;
 }
 
 .companyinfo {
@@ -584,7 +582,8 @@ section {
     position: relative;
     -webkit-box-sizing: border-box;
     -moz-box-sizing: border-box;
-    box-sizing: border-box
+    box-sizing: border-box;
+    color: black;
 }
 
 .site-header #cssmenu:after,
@@ -628,8 +627,8 @@ section {
     font-size: 14px;
     letter-spacing: 1px;
     text-decoration: none;
-    color: #fff;
-    font-weight: 400;
+    color: rgb(0, 0, 0);
+    font-weight: 550;
     text-transform: uppercase;
     -webkit-transition: all 0.3s;
     -o-transition: all 0.3s;
@@ -725,11 +724,11 @@ section {
     border-bottom: 1px solid #ddd;
     padding: 10.5px 15px;
     width: 170px;
-    font-size: 13px;
+    font-size: 14px;
     text-decoration: none;
-    color: #4a4a4a;
-    font-weight: 400;
-    background: #f7f7f7;
+    color: #000000;
+    font-weight: 550;
+    background: #eeeeee;
     -webkit-transition: all 0.3s;
     -o-transition: all 0.3s;
     transition: all 0.3s
@@ -1021,7 +1020,6 @@ only screen and (min-resolution:192dpi) and (max-width:1024px) {
         left: 0px;
         line-height: 75vh;
         text-align: center;
-        background: #ffffff40;
     }
 
     .Modern-Slider .item .info>div {
@@ -1118,18 +1116,18 @@ only screen and (min-resolution:192dpi) and (max-width:1024px) {
 
     .Modern-Slider .item h3 {
         text-transform: uppercase;
-        color: #000;
+        color: #d37213;
         -webkit-animation: fadeOutRight 1s both;
         animation: fadeOutRight 1s both;
         margin-top: 15px;
         margin-bottom: 30px;
         font-size: 36px;
         padding: 0;
-        font-weight: 700
+        font-weight: 900;
     }
 
     .Modern-Slider .item h3 em {
-        color: #000;
+        color: #d37213;
         font-style: normal
     }
 
@@ -2808,6 +2806,10 @@ only screen and (min-resolution:192dpi) and (max-width:1024px) {
         margin-bottom: 10px
     }
 
+    .about-services img {
+
+    }
+
     .about-services .service-item {
         margin-bottom: 30px
     }
@@ -3271,7 +3273,7 @@ only screen and (min-resolution:192dpi) and (max-width:1024px) {
     /* 03.07. Testimonials & About Us Starts */
 
     .more-about-us {
-        margin-top: -30px
+        margin-top: -30px;
     }
 
     .more-about-us img {
@@ -3284,7 +3286,8 @@ only screen and (min-resolution:192dpi) and (max-width:1024px) {
     }
 
     .more-about-us .right-content {
-        background-color: #fff;
+        /* background: url('../images/logo.png') rgba(255, 255, 255, 0.712) center no-repeat;
+        background-size: 700px 400px; */
         padding: 30px 30px 15px 30px;
         border-radius: 5px;
         -webkit-box-shadow: 0px 0px 20px rgba(0, 0, 0, 0.15);
@@ -3841,4 +3844,40 @@ ul li, ol li {
     display: -webkit-box;
     -webkit-box-orient: vertical;
     -webkit-line-clamp: 1;
+}
+
+.contact-us-submit {
+    display: inline-block;
+    background: #2959ad;
+    padding: 10px 20px;
+    text-align: center;
+    letter-spacing: 0.5px;
+    font-size: 14px;
+    font-weight: 600;
+    border-radius: 5px;
+    text-transform: uppercase;
+    color: #fff;
+    -webkit-transition: all 0.3s;
+    -o-transition: all 0.3s;
+    transition: all 0.3s;
+    border: none;
+}
+
+.title {
+font-size: 14px;
+}
+
+.total-charge {
+    border-top: 1px solid #00000042;
+    font-size: 14px;
+}
+
+.charge-info {
+    font-size: 14px;
+    font-weight: 700;
+}
+
+.charge-info-title {
+    font-size: 14px;
+    font-weight: 700;
 }

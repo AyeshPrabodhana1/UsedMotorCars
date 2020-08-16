@@ -2,6 +2,10 @@
 <?php include 'includes/loader.php'; ?>
 <?php include 'includes/navigation.php'; ?>
 
+<?php
+ob_start();
+require_once "util/connection.php";
+?>
 
 <div class="page-heading wow fadeIn" data-wow-duration="0.5s">
 	<div class="container">
@@ -33,28 +37,27 @@
 						<div class="sep-section-heading">
 							<h2>Send Us <em>Message</em></h2>
 						</div>
-						<form id="contact_form" action="#" method="POST" enctype="multipart/form-data">
+						<form method="post">
 							<div class="row">
 								<div class=" col-md-4 col-sm-4 col-xs-6">
-									<input type="text" class="blog-search-field" name="s" placeholder="Your name..." value="">
+									<input type="text" class="blog-search-field" name="name" placeholder="Your name..." required>
 								</div>
 								<div class="col-md-4 col-sm-4 col-xs-6">
-									<input type="text" class="blog-search-field" name="s" placeholder="Your email..." value="">
+									<input type="text" class="blog-search-field" name="email" placeholder="Your email..." required>
 								</div>
 								<div class="col-md-4 col-sm-4 col-xs-12">
-									<input type="text" class="subject" name="s" placeholder="Subject..." value="">
+									<input type="text" class="subject" name="subject" placeholder="Subject..." required>
 								</div>
 							</div>
 							<div class="row">
 								<div class="col-md-12 col-sm-12">
-									<textarea id="message" class="input" name="message" placeholder="Message..."></textarea>
+									<textarea id="message" class="input" name="message" placeholder="Message..." required></textarea>
 								</div>
 							</div>
 							<div class="row">
 								<div class="submit-coment col-md-12">
 									<div class="primary-button">
-										<a href="#">Send now <i class="fa fa-paper-plane"></i></a>
-									</div>
+										<button class="contact-us-submit" type="submit" name="SubmitButton">Send now <i class="fa fa-paper-plane"></i></button> </div>
 								</div>
 							</div>
 						</form>

@@ -118,9 +118,7 @@ while ($row = mysqli_fetch_assoc($query)) {
 							</div>
 						</div>
 						<div class="similar-info">
-							<div class="primary-button">
-								<a href="#">Proceed <i class="fa fa-dollar"></i></a>
-							</div>
+							<button class="btn btn-secondary" data-toggle="modal" data-target="#exampleModal">Proceed</button>
 						</div>
 					</div>
 				</div>
@@ -192,4 +190,139 @@ while ($row = mysqli_fetch_assoc($query)) {
 }
 ?>
 
-<?php include 'includes/footer.php'; ?>
+<div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+	<div class="modal-dialog modal-dialog-centered modal-lg" role="document" role="document">
+		<div class="modal-content">
+			<div class="modal-header">
+				<h5 class="modal-title" id="exampleModalLabel">
+					<span id="mainScreenHeader">Please choose the details for your quotation</span>
+					<span id="secondaryScreenHeader">Send Us Your Enquiry...</span>
+				</h5>
+				<button type="button" class="close" data-dismiss="modal" aria-label="Close">
+					<span aria-hidden="true">&times;</span>
+				</button>
+			</div>
+			<div class="modal-body">
+				<div class="container" id="mainScreen">
+					<div class="row">
+						<div class="col-md-4">
+							<p class="title">Country of Final Destination</p>
+						</div>
+						<div class="col-md-6">
+							<div class="form-group">
+								<label for="countrySelect" class="title">Country where the vehicle will be used /registered</label>
+								<select class="form-control" id="countrySelect">
+									<option>1</option>
+									<option>2</option>
+									<option>3</option>
+									<option>4</option>
+									<option>5</option>
+								</select>
+							</div>
+						</div>
+					</div>
+					<div class="row">
+						<div class="col-md-4">
+							<p class="title">Port of Delivery</p>
+						</div>
+						<div class="col-md-6">
+							<div class="form-group">
+								<label for="countrySelect" class="title">Port where the vehicle will be delivered</label>
+								<select class="form-control" id="countrySelect">
+									<option>1</option>
+									<option>2</option>
+									<option>3</option>
+									<option>4</option>
+									<option>5</option>
+								</select>
+							</div>
+						</div>
+					</div>
+					<div class="container">
+						<div class="row">
+							<p class="title">C&F INFORMATION</p>
+						</div>
+						<div class="row">
+							<div class="col-md-3 charge-info-title">
+								FOB price
+							</div>
+							<div class="col-md-2 charge-info">
+								US$ 5,000
+							</div>
+						</div>
+						<div class="row">
+							<div class="col-md-3 charge-info-title">
+								Freight (By Ro-Ro)
+							</div>
+							<div class="col-md-2 charge-info">
+								US$ 0
+							</div>
+						</div>
+						<br />
+						<div class="row" style="margin-bottom: 15px;">
+							<div class="col-md-3 charge-info-title">
+								Total
+							</div>
+							<div class="col-md-2 total-charge">
+								US$ 5,000
+							</div>
+						</div>
+					</div>
+					<button style="margin-bottom: 25px; float: right;" class="btn btn-secondary" onclick="continueProcess()">Continue</button>
+				</div>
+				<div class="container" id="secondaryScreen">
+					<i class="fa fa-arrow-left" style="font-size: 20px;color: red;" onclick="continueProcess()"></i>
+					<form>
+						<div class="col-md-8 col-md-off-2">
+							<div class="form-group">
+								<label for="countrySelect" class="title">Name</label>
+								<input type="text" class="form-control" />
+							</div>
+							<div class="form-group">
+								<label for="countrySelect" class="title">E-mail</label>
+								<input type="text" class="form-control" />
+							</div>
+							<div class="form-group">
+								<label for="countrySelect" class="title">Telephone</label>
+								<input type="text" class="form-control" />
+							</div>
+							<div class="form-group">
+								<label for="countrySelect" class="title">Enquiry</label>
+								<textarea type="text" class="form-control"></textarea>
+							</div>
+							<button type="submit" class="btn btn-primary">Submit</button>
+							<button type="button" class="btn btn-secondary">Reset</button>
+						</div>
+					</form>
+				</div>
+			</div>
+		</div>
+	</div>
+	<?php include 'includes/footer.php'; ?>
+
+	<script>
+		$(document).ready(function() {
+			var x = document.getElementById("secondaryScreen");
+			var xx = document.getElementById("secondaryScreenHeader");
+			x.style.display = "none";
+			xx.style.display = "none";
+		});
+
+		function continueProcess() {
+			var y = document.getElementById("secondaryScreen");
+			var x = document.getElementById("mainScreen");
+			var yy = document.getElementById("secondaryScreenHeader");
+			var xx = document.getElementById("mainScreenHeader");
+			if (x.style.display === "none") {
+				x.style.display = "block";
+				xx.style.display = "block";
+				y.style.display = "none";
+				yy.style.display = "none";
+			} else {
+				x.style.display = "none";
+				xx.style.display = "none";
+				y.style.display = "block";
+				yy.style.display = "block";
+			}
+		}
+	</script>
