@@ -66,7 +66,7 @@ while ($row = mysqli_fetch_assoc($query)) {
 		echo '	
 
 							<div class="sp-slide">
-								<img class="sp-image" src="http://localhost/usedmotorcars/uploads/post/' . $row_img["name"] . '" alt="" />
+								<img class="sp-image" src="../uploads/post/' . $row_img["name"] . '" alt="" />
 							</div>
 	';
 	}
@@ -75,7 +75,7 @@ while ($row = mysqli_fetch_assoc($query)) {
 						<div class="sp-thumbnails">
 						';
 	while ($row_img_thumb = mysqli_fetch_assoc($query_img_thumb)) {
-		echo '<img class="sp-thumbnail" src="http://localhost/usedmotorcars/uploads/post/' . $row_img_thumb["name"] . '" alt="" />';
+		echo '<img class="sp-thumbnail" src="../uploads/post/' . $row_img_thumb["name"] . '" alt="" />';
 	}
 	echo '
 						</div>
