@@ -28,7 +28,8 @@
 					<img src="http://placehold.it/555x310" alt="">
 				</div> -->
 				<div class="col-md-12">
-					<div class="right-content">
+					<div class="right-content" style="background-image: url(assets/images/background_logo.png); background-size: contain;
+background-repeat: no-repeat; margin-left:25px";>
 						<!-- <span>Lorem ipsum consectetur.</span> -->
 						<h6>It gives us great pleasure in welcoming you to our organization, through this website.</h6>
 						<p>

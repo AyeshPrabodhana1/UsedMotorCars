@@ -130,7 +130,7 @@
 			<div class="step position-relative">
 				<div class="step-heading position-static" id="step5">
 					<a class="" role="button" data-toggle="collapse" href="#collapse5" aria-expanded="true" aria-controls="collapse5">
-						<div class="num d-inline-flex text-white align-items-center justify-content-center position-relative rounded-circle bg-primary">4</div>
+						<div class="num d-inline-flex text-white align-items-center justify-content-center position-relative rounded-circle bg-primary">5</div>
 						<div class="pl-3 d-inline-flex title">Receive and Register</div>
 					</a>
 				</div>

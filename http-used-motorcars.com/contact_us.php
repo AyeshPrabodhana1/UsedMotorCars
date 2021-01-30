@@ -24,15 +24,13 @@ require_once "util/connection.php";
 	</div>
 </div>
 
-<div class="contact-us wow fadeIn" data-wow-delay="0.5s" data-wow-duration="1s">
-	<div id="map"></div>
-</div>
-
 <section>
-	<div class="contact-content wow fadeIn" data-wow-delay="0.5s" data-wow-duration="1s">
+	<div class="contact-content wow fadeIn" data-wow-delay="0.5s" data-wow-duration="1s" >
 		<div class="container">
-			<div class="row">
-				<div class="col-md-8">
+			<div class="row" >
+				<div class="col-md-8"   style="    background-image: url(assets/images/background_logo.png);
+    background-size: cover;
+    background-repeat: no-repeat; ">
 					<div class="send-message">
 						<div class="sep-section-heading">
 							<h2>Send Us <em>Message</em></h2>
@@ -77,7 +75,7 @@ require_once "util/connection.php";
 										</a>
 									</h4>
 								</div>
-								<div id="collapseOne" class="panel-collapse collapse in" role="tabpanel" aria-labelledby="headingOne">
+								<div id="collapseOne" class="panel-collapse" role="tabpanel" aria-labelledby="headingOne">
 									<div class="panel-body">
 										<div class="info-list">
 											<ul>

@@ -360,8 +360,8 @@ section {
 }
 
 .page-heading {
-    /* background-image: url(../images/banner/banner_flat_03.jpg); */
-    background-image: url('https://images.pexels.com/photos/3972753/pexels-photo-3972753.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940');
+    /* background-image: url(../images/banner/banner_flat_03.jpg); 650&w=940*/
+    background-image: url('https://images.unsplash.com/photo-1471174617910-3e9c04f58ff5?ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=1650&q=180');
     background-position: center center;
     background-size: cover;
     background-repeat: no-repeat;
@@ -2629,7 +2629,6 @@ only screen and (min-resolution:192dpi) and (max-width:1024px) {
         width: 40px;
         height: 40px;
         border-radius: 3px;
-        background-color: #f43d3d;
         text-align: center;
         line-height: 40px;
         display: inline-block;
@@ -2648,7 +2647,7 @@ only screen and (min-resolution:192dpi) and (max-width:1024px) {
         .contact-content .send-message {
             margin-bottom: 30px;
             padding-bottom: 30px;
-            border-bottom: 3px solid #eee
+            border-bottom: 3px solid #bfbfbf
         }
     }
 
@@ -2661,7 +2660,7 @@ only screen and (min-resolution:192dpi) and (max-width:1024px) {
         width: 100%;
         height: 35px;
         padding: 15px;
-        border: 1px solid #eee
+        border: 1px solid #bfbfbf
     }
 
     @media (max-width:991px) {
@@ -2686,7 +2685,7 @@ only screen and (min-resolution:192dpi) and (max-width:1024px) {
         height: 140px;
         max-height: 180px;
         padding: 15px;
-        border: 1px solid #eee
+        border: 1px solid #bfbfbf
     }
 
     .contact-content .send-message textarea:focus {
