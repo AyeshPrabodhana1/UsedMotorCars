@@ -1,3 +1,15 @@
+<?php
+ob_start();
+require_once "util/connection.php";
+
+$sql_brand = "SELECT * FROM vehicle_brand";
+$query_brand_list = mysqli_query($connection, $sql_brand);
+
+$sql_type = "SELECT * FROM vehicle_type";
+$query_type_list = mysqli_query($connection, $sql_type);
+
+?>
+
 <header class="site-header wow fadeIn" data-wow-duration="1s">
 <!-- style="background-color: #f9f9f9;" -->
     <div id="main-header" class="main-header">
@@ -5,11 +17,13 @@
             <div class="logo">
                 <a href="index.php"><img src="assets/images/logo.png" /></a>
             </div>
-            <!-- <div class="companyinfo">
+            <!-- 
+            <div class="companyinfo">
                 <span style="color:white; font-size: 14px;"><b>www.used-motorcars.com</b></span><br/>
                 <span style="color:white; font-size: 14px;">MOVEK INTERNATION LTD</span><br/>
                 <span style="color:white; font-size: 10px;">1-97, YOSHIMOTO-CHO,NAKAGAWA-KU, NAGOYA 454-082, JAPAN</span> <br/>
-            </div> -->
+            </div> 
+            -->
             <div id='cssmenu'>
                 <ul>
                     <li><a href='index.php'>Home</a></li>
@@ -18,16 +32,26 @@
                             <li><a href="list.php">All Cars</a></li>
                             <li><a href='#'>Make</a>
                                 <ul>
-                                    <li><a href='list.php'>Toyoya</a></li>
-                                    <li><a href='list.php'>Nissan</a></li>
+                                
+                                <?php
+                               while($data = mysqli_fetch_array($query_brand_list))
+                               {
+                                echo "<li><a href='list.php?brand=". $data['id'] ."'>" .$data['name'] ."</a></li>"; 
+                                }
+                               ?>
                                 </ul>
                             </li>
                             <li><a href='#'>Type</a>
                                 <ul>
-                                    <li><a href='list.php'>SUV</a></li>
-                                    <li><a href='list.php'>Truck</a></li>
+                                <?php
+                               while($data = mysqli_fetch_array($query_type_list))
+                               {
+                                echo "<li><a href='list.php?type=". $data['id'] ."'>" .$data['name'] ."</a></li>"; 
+                                }
+                               ?>
                                 </ul>
                             </li>
+                            
                         </ul>
                     </li>
                     <li><a href='process.php'>How to Buy</a></li>

@@ -22,7 +22,7 @@ $query_type = mysqli_query($connection, $sql_type);
 						while ($row_make = mysqli_fetch_array($query_make)) {
 							echo '
 								<li class="make-type">
-									<a href="list.php" class="text-light-black">
+									<a href="list.php?brand='. $row_make['id'] .'" class="text-light-black">
 										<span>
 											<img src="../uploads/brand/' . $row_make["image"] . '" class="img-fluid" alt="brand-logo"/>
 									 	</span>
@@ -45,7 +45,7 @@ $query_type = mysqli_query($connection, $sql_type);
 							while($row_type = mysqli_fetch_array($query_type)) {
 								echo '
 								<li class="make-type">
-									<a href="list.php" class="text-light-black">
+									<a href="list.php?type='. $row_type['id'] .'" class="text-light-black">
 										<span>
 											<img src="../uploads/type/'. $row_type['image'] .'" class="img-fluid" alt="brand-logo" />
 										</span>
