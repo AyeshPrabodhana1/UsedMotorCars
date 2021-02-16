@@ -6,20 +6,33 @@
 ob_start();
 require_once "util/connection.php";
 
-$brand;
-$type;
-$sql_post;
+$sql_post = "SELECT * FROM posts";
+$andParts;
 
-if (isset($_GET['brand'])) {
-	$brand = $_GET['brand'];
-	$sql_post = "SELECT * FROM posts where brandId = $brand";
-} else if (isset($_GET['type'])) {
-	$type = $_GET['type'];
-	$sql_post = "SELECT * FROM posts where typeId = $type";
-} else {
-	$sql_post = "SELECT * FROM posts";
+if(isset($_GET['brand'])) {
+    $brand = $_GET['brand'];
+    $andParts[] = "brandId = '$brand'";
 }
 
+if(isset($_GET['type'])) {
+    $type = $_GET['type'];
+    $andParts[] = "typeId = $type";
+}
+
+if (isset($_GET['transmission'])) {
+    $transmission = $_GET['transmission'];
+    $andParts[] = "transmissionId = $transmission";
+}
+
+if (isset($_GET['fuel'])) {
+    $fuel = $_GET['fuel'];
+	$andParts[] = "fuelId = $fuel";
+}
+		
+if (!empty($andParts)) {
+	$sql_post .= " WHERE ".implode(" AND " , $andParts);
+}
+	
 $query_list = mysqli_query($connection, $sql_post);
 
 $sql_brand = "SELECT * FROM vehicle_brand";
@@ -61,75 +74,75 @@ $query_transmission_list = mysqli_query($connection, $sql_transmission);
 					<div class="row">
 
 						<?php
-						if(mysqli_num_rows($query_list) ) {
-							while ($row = mysqli_fetch_array($query_list)) {
-								echo '
-								<div class="col-md-12">
-								<div class="car-item">
-									<div class="row">
-										<div class="col-md-5">
-											<div class="thumb-content">
-												<div class="car-banner">
-													<a href="detail.php?id=' . $row["id"] . '">For Sale</a>
-												</div>
-												<div class="thumb-inner">
-												';
-								$sql_post_image = "SELECT * FROM images where post_id = " . $row['id'] . "";
-								$query_image = mysqli_query($connection, $sql_post_image);
-								$firstrow = mysqli_fetch_assoc($query_image);
-								mysqli_data_seek($query_image, 0);
-								echo '
-													<a href="detail.php?id=' . $row["id"] . '"><img src="../uploads/post/' . $firstrow["name"] . '" alt=""></a>
-													';
-	
-								echo '		</div>
-											</div>
-										</div>
-										<div class="col-md-7">
-											<div class="down-content">
-												<a href="detail.php?id=' . $row["id"] . '">
-													<h4>' . $row['title'] . '</h4>
-												</a>
-												<span>' . $row['amount'] . '</span>
-												<div class="line-dec"></div>
-												<p>' . $row['description'] . '</p>
-												<ul class="car-info">
-													<li>
-														<div class="item"><i class="flaticon flaticon-calendar"></i>
-															<p>' . $row['vehicleYear'] . '</p>
-														</div>
-													</li>
-													<li>
-														<div class="item"><i class="flaticon flaticon-speed"></i>
-															<p>' . $row['speed'] . 'p/h</p>
-														</div>
-													</li>
-													<li>
-														<div class="item"><i class="flaticon flaticon-road"></i>
-															<p>' . $row['distance'] . '</p>
-														</div>
-													</li>
-													';
-								$sql_post_fuel = "SELECT * FROM fueltype where id = " . $row['fuelId'] . "";
-								$query_fuel = mysqli_query($connection, $sql_post_fuel);
-								$fuelrow = mysqli_fetch_assoc($query_fuel);
-								mysqli_data_seek($query_fuel, 0);
-								echo '
-													<li>
-														<div class="item"><i class="flaticon flaticon-fuel"></i>
-															<p>' . $fuelrow['name'] . '</p>
-														</div>
-													</li>
-												</ul>
-											</div>
-										</div>
-									</div>
-								</div>
-							</div>
-								';
-							}
-						} else {
-							echo '
+                        if(mysqli_num_rows($query_list) ) {
+                            while ($row = mysqli_fetch_array($query_list)) {
+                                echo '
+                                <div class="col-md-12">
+                                <div class="car-item">
+                                    <div class="row">
+                                        <div class="col-md-5">
+                                            <div class="thumb-content">
+                                                <div class="car-banner">
+                                                    <a href="detail.php?id=' . $row["id"] . '">For Sale</a>
+                                                </div>
+                                                <div class="thumb-inner">
+                                                ';
+                                $sql_post_image = "SELECT * FROM images where post_id = " . $row['id'] . "";
+                                $query_image = mysqli_query($connection, $sql_post_image);
+                                $firstrow = mysqli_fetch_assoc($query_image);
+                                mysqli_data_seek($query_image, 0);
+                                echo '
+                                                    <a href="detail.php?id=' . $row["id"] . '"><img src="../uploads/post/' . $firstrow["name"] . '" alt=""></a>
+                                                    ';
+    
+                                echo '		</div>
+                                            </div>
+                                        </div>
+                                        <div class="col-md-7">
+                                            <div class="down-content">
+                                                <a href="detail.php?id=' . $row["id"] . '">
+                                                    <h4>' . $row['title'] . '</h4>
+                                                </a>
+                                                <span>' . $row['amount'] . '</span>
+                                                <div class="line-dec"></div>
+                                                <p>' . $row['description'] . '</p>
+                                                <ul class="car-info">
+                                                    <li>
+                                                        <div class="item"><i class="flaticon flaticon-calendar"></i>
+                                                            <p>' . $row['vehicleYear'] . '</p>
+                                                        </div>
+                                                    </li>
+                                                    <li>
+                                                        <div class="item"><i class="flaticon flaticon-speed"></i>
+                                                            <p>' . $row['speed'] . 'p/h</p>
+                                                        </div>
+                                                    </li>
+                                                    <li>
+                                                        <div class="item"><i class="flaticon flaticon-road"></i>
+                                                            <p>' . $row['distance'] . '</p>
+                                                        </div>
+                                                    </li>
+                                                    ';
+                                $sql_post_fuel = "SELECT * FROM fueltype where id = " . $row['fuelId'] . "";
+                                $query_fuel = mysqli_query($connection, $sql_post_fuel);
+                                $fuelrow = mysqli_fetch_assoc($query_fuel);
+                                mysqli_data_seek($query_fuel, 0);
+                                echo '
+                                                    <li>
+                                                        <div class="item"><i class="flaticon flaticon-fuel"></i>
+                                                            <p>' . $fuelrow['name'] . '</p>
+                                                        </div>
+                                                    </li>
+                                                </ul>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                                ';
+                            }
+                        } else {
+                            echo '
                             <div class="col-md-12">
                             <div class="car-item">
                                 <div class="row">
@@ -142,7 +155,7 @@ $query_transmission_list = mysqli_query($connection, $sql_transmission);
                             </div>
                             </div>
                             ';
-						}
+                        }
 						?>
 					</div>
 				</div>
@@ -254,6 +267,6 @@ $query_transmission_list = mysqli_query($connection, $sql_transmission);
 		if (transmission != -1) {
 			url = url + 'transmission=' + transmission + '&';
 		}
-		window.location = 'https://vithanagedevelopments.000webhostapp.com/search.php' + url;
+		window.location = 'http://localhost/movek/UsedMotorCars/http-used-motorcars.com/search.php' + url;
 	});
 </script>
