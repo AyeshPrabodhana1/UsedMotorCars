@@ -1008,8 +1008,8 @@ only screen and (min-resolution:192dpi) and (max-width:1024px) {
     }
 
     .Modern-Slider .item .img-fill {
-        height: 100vh;
-        background: #000
+        height: 65vh;
+        background: #051b2b52;
     }
 
     .Modern-Slider .item .img-fill .info {
@@ -1018,7 +1018,7 @@ only screen and (min-resolution:192dpi) and (max-width:1024px) {
         height: 100%;
         top: 0px;
         left: 0px;
-        line-height: 75vh;
+        line-height: 55vh;
         text-align: center;
     }
 
@@ -1116,7 +1116,7 @@ only screen and (min-resolution:192dpi) and (max-width:1024px) {
 
     .Modern-Slider .item h3 {
         text-transform: uppercase;
-        color: #d37213;
+        color: #000000;
         -webkit-animation: fadeOutRight 1s both;
         animation: fadeOutRight 1s both;
         margin-top: 15px;
@@ -1319,9 +1319,16 @@ only screen and (min-resolution:192dpi) and (max-width:1024px) {
 
     @media (max-width:991px) {
     .Modern-Slider .item .img-fill .info {
-           line-height: 100vh
+           display: none;
+        }
+
+    .Modern-Slider .item .img-fill {
+            height: 10vh;
+            background: #ffffff;
         }
     }
+
+    
 
     /* 03.01. Banner Ends */
 
