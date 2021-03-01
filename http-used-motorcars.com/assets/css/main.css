@@ -1327,6 +1327,19 @@ only screen and (min-resolution:192dpi) and (max-width:1024px) {
             background: #ffffff;
         }
     }
+	
+	@media screen and (min-width: 1600px) {
+		.Modern-Slider .item .img-fill .info {
+			line-height: 50vh !important;
+		}
+		
+		.Modern-Slider .item .img-fill {
+            height: 65vh !important;
+            background: #010d1b9e;
+        }
+    }
+	
+	}
 
     
 
