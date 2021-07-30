@@ -1009,7 +1009,6 @@ only screen and (min-resolution:192dpi) and (max-width:1024px) {
 
     .Modern-Slider .item .img-fill {
         height: 95vh;
-        background: #010d1b9e;
     }
 
     .Modern-Slider .item .img-fill .info {
@@ -1018,6 +1017,36 @@ only screen and (min-resolution:192dpi) and (max-width:1024px) {
         height: 100%;
         top: 0px;
         left: 0px;
+        line-height: 75vh;
+        text-align: center;
+    }
+
+    .Modern-Slider .item .img-fill .infoLeftContent {
+        position: absolute;
+        width: 100%;
+        height: 100%;
+        top: 120px;
+        left: 38%;
+        line-height: 75vh;
+        text-align: center;
+    }
+
+    .Modern-Slider .item .img-fill .infoBottomContent {
+        position: absolute;
+        width: 100%;
+        height: 100%;
+        top: 560px;
+        left: 0px;
+        line-height: 75vh;
+        text-align: center;
+    }
+
+    .Modern-Slider .item .img-fill .infoRightContent {
+        position: absolute;
+        width: 100%;
+        height: 100%;
+        top: 320px;
+        left: -750px;
         line-height: 75vh;
         text-align: center;
     }
@@ -1335,7 +1364,7 @@ only screen and (min-resolution:192dpi) and (max-width:1024px) {
 		
 		.Modern-Slider .item .img-fill {
             height: 65vh !important;
-            background: #010d1b9e;
+            background: #ffffff;
         }
     }
 	
