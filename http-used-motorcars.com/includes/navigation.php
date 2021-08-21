@@ -17,13 +17,11 @@ $query_type_list = mysqli_query($connection, $sql_type);
             <div class="logo">
                 <a href="index.php"><img src="assets/images/logo.png" /></a>
             </div>
-            <!-- 
-            <div class="companyinfo">
-                <span style="color:white; font-size: 14px;"><b>www.used-motorcars.com</b></span><br/>
-                <span style="color:white; font-size: 14px;">MOVEK INTERNATION LTD</span><br/>
-                <span style="color:white; font-size: 10px;">1-97, YOSHIMOTO-CHO,NAKAGAWA-KU, NAGOYA 454-082, JAPAN</span> <br/>
+            
+            <div>
+                <span class="companyinfo">MOVEK INTERNATION LTD</span>
             </div> 
-            -->
+           
             <div id='cssmenu'>
                 <ul>
                     <li><a href='index.php'>Home</a></li>

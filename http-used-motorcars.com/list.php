@@ -70,7 +70,7 @@ $query_transmission_list = mysqli_query($connection, $sql_transmission);
 										<div class="col-md-5">
 											<div class="thumb-content">
 												<div class="car-banner">
-													<a href="detail.php?id=' . $row["id"] . '">For Sale</a>
+													<!-- <a href="detail.php?id=' . $row["id"] . '">For Sale</a> -->
 												</div>
 												<div class="thumb-inner">
 												';
@@ -90,7 +90,7 @@ $query_transmission_list = mysqli_query($connection, $sql_transmission);
 												<a href="detail.php?id=' . $row["id"] . '">
 													<h4>' . $row['title'] . '</h4>
 												</a>
-												<span>' . $row['amount'] . '</span>
+												<span>' . $row['amount'] . '</span> <span style="font-size: 14px; font-weight:600;">FOB</span>
 												<div class="line-dec"></div>
 												<p>' . $row['description'] . '</p>
 												<ul class="car-info">

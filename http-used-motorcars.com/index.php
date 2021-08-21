@@ -13,12 +13,13 @@
 			<!-- <img src="https://images.pexels.com/photos/1429775/pexels-photo-1429775.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940"/> -->
 			<div class="info">
 				<div>
-					<h4 style="text-transform: uppercase;font-weight: 800;">www.usedmotorcars.com</h4>
+					<h4 style="text-transform: uppercase;font-weight: 800;text-decoration: underline;"><a>www.usedmotorcars.com</a></h4>
 					<p style=" font-weight: 800;">sales@used-motorcars.com <br/>
 					Tel : +81-52-351-5541</p>
 					<h6 class="secondary-button">
 						<a href="list.php" style="padding: 16px 50px;">View All Cars <i class="fa fa-car"></i></a>
 					</h6>
+					<p style=" font-weight: 800; font-size: 25px; color: rgb(102, 0, 0);">Click! Click!! The dealer at your fingertips!!!</p>
 				</div>
 			</div>
 
@@ -28,15 +29,9 @@
 				</div>
 			</div>
 
-			<div class="infoRightContent">
-				<div>
-					<p style=" font-weight: 800; font-size: 25px; color: rgb(102, 0, 0);">Click! Click!! <br/> The dealer at your fingertips!!!</p>
-				</div>
-			</div>
-
 			<div class="infoBottomContent">
 				<div>
-					<p style=" font-weight: 800; font-size: 25px; color: rgb(102, 0, 0);">It's that easy... Let's find your next car..</p>
+					<p style=" font-weight: 800; font-size: 25px; color: rgb(102, 0, 0); float:left; margin-left: 50px;">It's that easy... Let's find your next car..</p>
 				</div>
 			</div>
 		</div>

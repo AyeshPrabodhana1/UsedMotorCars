@@ -9,13 +9,13 @@ $sql_type = "SELECT * FROM vehicle_type";
 $query_type = mysqli_query($connection, $sql_type);
 ?>
 
-<section class="car0=-browse-make-type-sec">
+<section class="car0=-browse-make-type-sec" style="margin-top: 50px;">
 	<div class="container">
 		<div class="row">
 			<div class="col-md-6">
 				<div class="car-browse-make-type">
 					<h5 class="text-light-black">
-						Browse by <span class="text-blue">Category</span>
+						Browse by <span class="text-blue">Manufacturer</span>
 					</h5>
 					<ul class="make">
 						<?php

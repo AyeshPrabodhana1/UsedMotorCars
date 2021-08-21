@@ -28,9 +28,7 @@ require_once "util/connection.php";
 	<div class="contact-content wow fadeIn" data-wow-delay="0.5s" data-wow-duration="1s" >
 		<div class="container">
 			<div class="row" >
-				<div class="col-md-8"   style="    background-image: url(assets/images/background_logo.png);
-    background-size: cover;
-    background-repeat: no-repeat; ">
+				<div class="col-md-8">
 					<div class="send-message">
 						<div class="sep-section-heading">
 							<h2>Send Us <em>Message</em></h2>
@@ -81,7 +79,7 @@ require_once "util/connection.php";
 											<ul>
 												<li><i class="fa fa-phone"></i><span>+81-52-351-5541 (Sales-direct)</span></li>
 												<li><i class="fa fa-fax"></i><span>+81-52-351-5542 (Sales-direct)</span></li>
-												<li><i class="fa fa-phone"></i><span>+81-903-586-0327</span></li>
+												<li><i class="fa fa-phone"></i><span>+81-903-586-0327 <br/>(Available on WhatsApp/Viber/Line/IMO apps and iMessage)</span></li>
 												<li><i class="fa fa-envelope"></i><span>Sidney@used-motorcars.com</span></li>
 											</ul>
 										</div>
@@ -101,7 +99,7 @@ require_once "util/connection.php";
 											<ul>
 												<li><i class="fa fa-phone"></i><span>+81-52-351-5541</span></li>
 												<li><i class="fa fa-fax"></i><span>+81-52-351-5542</span></li>
-												<li><i class="fa fa-phone"></i><span>+81-804-978-0020</span></li>
+												<li><i class="fa fa-phone"></i><span>+81-804-978-0020 <br/>(Available on WhatsApp/Viber/Line/IMO apps and iMessage)</span></li>
 												<li><i class="fa fa-envelope"></i><span>Zuhura@used-motorcars.com</span></li>
 											</ul>
 										</div>

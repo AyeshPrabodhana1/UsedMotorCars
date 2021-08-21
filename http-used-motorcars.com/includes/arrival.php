@@ -34,7 +34,7 @@ $query_list = mysqli_query($connection, $sql_post);
 						<div class="car-item wow fadeIn" data-wow-duration="0.75s">
 							<div class="thumb-content">
 								<div class="car-banner">
-									<a href="detail.php?id=' . $row["id"] . '">For Sale</a>
+									<!-- <a href="detail.php?id=' . $row["id"] . '">For Sale</a> -->
 								</div>
                                 <div class="thumb-inner">
                                 ';
@@ -53,7 +53,7 @@ $query_list = mysqli_query($connection, $sql_post);
 								<a href="detail.php?id=' . $row["id"] . '">
 									<h4>' . $row['title'] . '</h4>
 								</a>
-								<span>' . $row['amount'] . '</span>
+								<span>' . $row['amount'] . '</span> <span style="font-size: 14px; font-weight:600;">FOB</span>
 								<p class="wrap_description">' . $row['description'] . '</p>
 								<ul class="car-info">
 									<li>
