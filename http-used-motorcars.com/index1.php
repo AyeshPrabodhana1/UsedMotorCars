@@ -12,7 +12,7 @@
 </div>
 
 <div class="Modern-Slider">
-	<img style="object-fit: cover;" src="assets/images/banner/bmw_car_front_view_163376_1920x1080.png" />
+	<img style="object-fit: cover;" src="assets/images/banner/newbanner.jpg" />
 </div>
 
 <?php include 'includes/slider.php'; ?>

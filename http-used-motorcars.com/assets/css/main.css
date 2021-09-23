@@ -1008,7 +1008,7 @@ only screen and (min-resolution:192dpi) and (max-width:1024px) {
     }
 
     .Modern-Slider .item .img-fill {
-        height: 95vh;
+        // height: 95vh;
     }
 
     .Modern-Slider .item .img-fill .info {
@@ -1019,26 +1019,23 @@ only screen and (min-resolution:192dpi) and (max-width:1024px) {
         left: 0px;
         line-height: 75vh;
         text-align: center;
+        // line-height: 60vh !important;
     }
 
     .Modern-Slider .item .img-fill .infoLeftContent {
         position: absolute;
-        width: 100%;
-        height: 100%;
         top: 120px;
-        left: 38%;
         line-height: 75vh;
         text-align: center;
+        right: 0;
     }
 
     .Modern-Slider .item .img-fill .infoBottomContent {
-        position: absolute;
         width: 100%;
         height: 100%;
-        top: 560px;
         line-height: 75vh;
         text-align: center;
-        float: left;
+        bottom: 0;
     }
 
     .Modern-Slider .item .img-fill .infoRightContent {
@@ -1304,7 +1301,8 @@ only screen and (min-resolution:192dpi) and (max-width:1024px) {
         position: relative;
         top: 0;
         left: 0;
-        display: block
+        display: block;
+		height: 700px;
     }
 
     .slick-track:after,
@@ -1346,10 +1344,28 @@ only screen and (min-resolution:192dpi) and (max-width:1024px) {
         border: 1px solid transparent
     }
 
+    .movekinfo {
+        position: absolute;
+    top: 145px;
+    z-index: 100;
+    text-align: center;
+    width: 100%;
+    color:white;
+    }
+
     @media (max-width:991px) {
     .Modern-Slider .item .img-fill .info {
            display: none;
+		  
         }
+
+        .movekinfo {
+            display: none;
+        }
+		
+	.slick-track {
+		height: 0px;
+	}
 
     .Modern-Slider .item .img-fill {
             height: 10vh;
@@ -1366,7 +1382,10 @@ only screen and (min-resolution:192dpi) and (max-width:1024px) {
             height: 65vh !important;
             background: #ffffff;
         }
-    }
+		
+		.slick-track {
+		height: 660px;
+		}
 	
 	}
 

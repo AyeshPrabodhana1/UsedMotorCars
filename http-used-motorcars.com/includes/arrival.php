@@ -62,11 +62,6 @@ $query_list = mysqli_query($connection, $sql_post);
 										</div>
 									</li>
 									<li>
-										<div class="item"><i class="flaticon flaticon-speed"></i>
-											<p>' . $row['speed'] . 'p/h</p>
-										</div>
-									</li>
-									<li>
 										<div class="item"><i class="flaticon flaticon-road"></i>
 											<p>' . $row['distance'] . '</p>
 										</div>

@@ -49,7 +49,7 @@ $query_type_list = mysqli_query($connection, $sql_type);
                                ?>
                                 </ul>
                             </li>
-                            
+                            <li><a href="mailto:Sidney@used-motorcars.com" target="_blank">Diplomats/Expats</a></li>
                         </ul>
                     </li>
                     <li><a href='process.php'>How to Buy</a></li>
