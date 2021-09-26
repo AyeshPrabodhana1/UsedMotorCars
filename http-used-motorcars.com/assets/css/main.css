@@ -565,7 +565,7 @@ section {
 }
 
 .site-header #cssmenu {
-    float: right;
+    float: left;
     z-index: 99999
 }
 

@@ -17,13 +17,9 @@ $query_type_list = mysqli_query($connection, $sql_type);
             <div class="logo">
                 <a href="index.php"><img src="assets/images/logo.png" /></a>
             </div>
-            
-            <div>
-                <span class="companyinfo">MOVEK INTERNATION LTD</span>
-            </div> 
-           
             <div id='cssmenu'>
                 <ul>
+					<li><a>MOVEK INTERNATION PVT LTD</a></li>
                     <li><a href='index.php'>Home</a></li>
                     <li class='active'><a href='#'>Find Cars</a>
                         <ul>
